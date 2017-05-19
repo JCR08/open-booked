@@ -4,12 +4,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 var $ = window.jQuery = require('jquery');
 
-class Attractions extends Component {
+class SingleAttraction extends Component{
 
   constructor(){
     super();
     this.state={
-      attractions: [{}]
+      attraction: []
     }
   }
 
@@ -17,62 +17,60 @@ class Attractions extends Component {
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
     axios.get('http://localhost:8080')
-      .then(response => response.data.sort(function(a,b){
-        var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-        if(nameA < nameB){
-          return -1
-        } else if (nameA > nameB){
-          return 1
-        } else {
-          return 0
-        }
-      }))
-      .then(array => array.filter(object => object.name.includes('Halloween') !== true))
-      .then(array => array.filter(object => object.name.includes('Christmas') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirate and Princess') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirates at Walt Disney World') !== true))
-      // .then(array => console.log(array))
-      .then(array => this.setState({ attractions: array }))
+    .then(response => response.data.filter(data => data.id.includes(`${this.props.match.params.id}`) == true))
+    //.then(object => console.log(object))
+    .then(object => this.setState({ attraction: object[0] }))
   }
 
   displayState(){
-    if(this.state.attractions.length > 1){
-      return (
-        <ul className="row">
-          {this.state.attractions.map(attraction => {
-            return (
-              <li className="card-panel image-container col s4 center-align">
-
-                <Link to={`/attraction/${attraction.id}`}>
-                  <img className="responsive-img" src={`${attraction.image}`}/>
-                  <div><b>{attraction.name}</b></div>
-                  <div>{this.waitTime(attraction)}</div>
-                </Link>
-
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+    const attraction = this.state.attraction
+    console.log(attraction);
+    // console.log(attraction.image);
+    return(
+      <div className="card row">
+        <div className="attractionImage col s6 center-align">
+          <img className="responsive-img" src={`${attraction.image}`} alt="#"/>
+        </div>
+        <div className="attractionInfo col s6 center-align">
+          <h4><u>{attraction.name}</u></h4>
+          <p>Location: {attraction.world}</p>
+          <p>{this.fastpass(attraction)}</p>
+          <p>{attraction.description}</p>
+          <div>{this.waitTime(attraction)}</div>
+        </div>
+      </div>
+    )
   }
 
   waitTime(attraction){
     // console.log(attraction.status);
     if(attraction.status === "Operating"){
       return (
-         <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
+         <p>Wait Time: <em>{attraction.waitTime} minutes</em></p>
       )
     } else {
       return (
-        <div>Status: <em>{attraction.status}</em></div>
+        <p>Status: <em>{attraction.status}</em></p>
+      )
+    }
+  }
+
+  fastpass(attraction){
+    console.log(attraction.fastPass);
+    if(attraction.fastPass == true){
+      return (
+        <p>Fastpass is available for this attraction.</p>
+      )
+    } else {
+      return (
+        <p>Fastpass is not available for this attraction.</p>
       )
     }
   }
 
   render(){
     return(
-      <div className="allAttractions container">
+      <div className="singleAtttraction container">
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li><a href="#!" className="center-align">Main Street, USA</a></li>
@@ -97,7 +95,7 @@ class Attractions extends Component {
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul className="hide-on-med-and-down">
-              <li className="col s6 center-align">
+              <li className="col s4 center-align">
                 <a className="black-text dropdown-button"
                   data-beloworigin="true"
                   href="#!"
@@ -105,7 +103,14 @@ class Attractions extends Component {
                   Worlds
                 </a>
               </li>
-              <li className="col s6 center-align">
+
+              <li className="col s4 center-align">
+                <Link className="black-text" to="/attractions">
+                  Attractions
+                </Link>
+              </li>
+
+              <li className="col s4 center-align">
                 <a className="black-text dropdown-button"
                   data-beloworigin="true"
                   href="#!"
@@ -126,4 +131,4 @@ class Attractions extends Component {
   }
 }
 
-export default Attractions;
+export default SingleAttraction;

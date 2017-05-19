@@ -8,6 +8,7 @@ import {
 import logo from './logo.gif';
 import Home from './home';
 import Attractions from './attractions';
+import SingleAttraction from './single-attraction'
 import './App.css';
 
 class App extends Component {
@@ -38,8 +39,12 @@ class App extends Component {
               <Home {...defaultProps}/> }
             />
 
-            <Route path="/attractions" render={(defaultProps) =>
+            <Route exact path="/attractions" render={(defaultProps) =>
               <Attractions {...defaultProps}/> }
+            />
+
+            <Route path="/attraction/:id?" render={(defaultProps) =>
+              <SingleAttraction {...defaultProps}/> }
             />
 
           </div>

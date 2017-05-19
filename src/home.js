@@ -35,7 +35,6 @@ class Home extends Component {
                   href="#!"
                   data-activates="diningDropdown">
                   Dining
-                  <i className="material-icons right">arrow_drop_down</i>
                 </a>
               </li>
             </ul>
@@ -43,7 +42,7 @@ class Home extends Component {
         </nav>
 
 
-        <div className="worlds row">
+        <section className="worlds row">
             <div className="world-logos valign-wrapper image-container col s4">
               <img className="responsive-img" src="../world-logos/Main-Street.svg" alt="Main Street, USA logo"/>
             </div>
@@ -62,7 +61,7 @@ class Home extends Component {
             <div className="world-logos valign-wrapper image-container col s4">
               <img className="responsive-img" src="../world-logos/Tomorrowland.svg" alt="Tomorrowland logo"/>
             </div>
-        </div>
+        </section>
       </div>
     )
   }
