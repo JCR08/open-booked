@@ -1,0 +1,135 @@
+[
+  {
+    "place": "Be Our Guest Restaurant",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/be-our-guest-restaurant/be-our-guest-restaurant-00.jpg?11022013095431",
+    "price": "$-$$",
+    "type": "Table Service",
+    "world": "Fantasyland"
+  },
+  {
+    "place": "Casey's Corner",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/caseys-corner/caseys-corner-00.jpg?12022013071707",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Main Street, USA"
+  },
+  {
+    "place": "Cinderella's Royal Table",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/cinderellas-royal-table/cinderella-royal-table-07.jpg?23062015061150",
+    "price": "$$$-$$$$",
+    "type": "Table Service",
+    "world": "Fantasyland"
+  },
+  {
+    "place": "Columbia Harbour House",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/columbia-harbour-house/columbia-harbour-house-gallery02.jpg?30122013120337",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Liberty Square"
+  },
+  {
+    "place": "Cosmic Ray's Starlight Cafe",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/cosmic-ray-starlight-cafe/cosmic-ray-starlight-cafe-gallery01.jpg?03032014134829",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Tomorrowland"
+  },
+  {
+    "place": "The Crystal Palace",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/the-crystal-palace/crystal-palace-gallery09.jpg?30122013120451",
+    "price": "$$-$$$",
+    "type": "Table Service",
+    "world": "Main Street, USA"
+  },
+  {
+    "place": "The Diamond Horseshoe",
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/03/3d/3e/1b/the-diamond-horseshoe.jpg",
+    "price": "$$$",
+    "type": "Table Service",
+    "world": "Liberty Square"
+  },
+  {
+    "place": "The Friar's Nook",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/friars-nook/friars-nook-gallery02.jpg?25112015104303",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Fantasyland"
+  },
+  {
+    "place": "Golden Oak Outpost",
+    "image": "http://madaboutthemouse.net/wp-content/uploads/2014/06/golden-oak-outpost-00.jpg",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Frontierland"
+  },
+  {
+    "place": "Jungle Navigation Co. Ltd. Skipper Canteen",
+    "image": "https://www.disboards.com/media/skipper-canteen07.79124/full",
+    "price": "$$",
+    "type": "Table Service",
+    "world": "Adventureland"
+  },
+  {
+    "place": "Liberty Tree Tavern",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/liberty-tree-tavern/liberty-tree-tavern-gallery02.jpg?26032014111408",
+    "price": "$$",
+    "type": "Table Service",
+    "world": "Liberty Square"
+  },
+  {
+    "place": "The Lunching Pad",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/the-lunching-pad/lunching-pad-00.jpg?11022013102721",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Tomorrowland"
+  },
+  {
+    "place": "Main Street Bakery",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/main-street-bakery/main-street-bakery-updated-00.jpg?15102013110900",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Main Street, USA"
+  },
+  {
+    "place": "Pecos Bill Tall Tale Inn and Cafe",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/pecos-bill-tall-tale-inn-and-cafe/pecos-bill-tall-tale-inn-and-cafe-gallery03.jpg?17022016085526",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Frontierland"
+  },
+  {
+    "place": "Pinocchio Village Haus",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/pinnocchio-village-haus/pinocchio-village-haus-00.jpg?11022013104432",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Fantasyland"
+  },
+  {
+    "place": "The Plaza Restaurant",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/plaza-restaurant/plaza-restaurant-00.jpg?11022013112946",
+    "price": "$$",
+    "type": "Table Service",
+    "world": "Main Street, USA"
+  },
+  {
+    "place": "Tomorrowland Terrace Restaurant",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/tomorrowland-terrace-restaurant/tomorrowland-terrace-restaurant-gallery06.jpg?09062016092316",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Tomorrowland"
+  },
+  {
+    "place": "Tony's Town Square Restaurant",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/tonys-town-square/tonys-town-square-restaurant-00.jpg?16072013124612",
+    "price": "$$",
+    "type": "Table Service",
+    "world": "Main Street, USA"
+  },
+  {
+    "place": "Tortuga Tavern",
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/03/3d/3a/c5/tortuga-tavern.jpg",
+    "price": "$",
+    "type": "Quick Service",
+    "world": "Adventureland"
+  }
+]

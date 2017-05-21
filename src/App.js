@@ -7,8 +7,12 @@ import {
   } from 'react-router-dom';
 import logo from './logo.gif';
 import Home from './home';
+import SpecificWorld from './world';
 import Attractions from './attractions';
-import SingleAttraction from './single-attraction'
+import SingleAttraction from './single-attraction';
+import QuickService from './quick-service';
+import TableService from './table-service';
+import SingleRestaurant from './single-restaurant';
 import './App.css';
 
 class App extends Component {
@@ -39,12 +43,28 @@ class App extends Component {
               <Home {...defaultProps}/> }
             />
 
+            <Route path="/world/:world?" render={(defaultProps) =>
+              <SpecificWorld {...defaultProps}/> }
+            />
+
             <Route exact path="/attractions" render={(defaultProps) =>
               <Attractions {...defaultProps}/> }
             />
 
             <Route path="/attraction/:id?" render={(defaultProps) =>
               <SingleAttraction {...defaultProps}/> }
+            />
+
+            <Route exact path="/dining/quick-service" render={(defaultProps) =>
+              <QuickService {...defaultProps}/> }
+            />
+
+            <Route exact path="/dining/table-service" render={(defaultProps) =>
+              <TableService {...defaultProps}/> }
+            />
+
+            <Route path="/dining/quick-service-restaurant/:permalink?" render={(defaultProps) =>
+              <SingleRestaurant {...defaultProps}/> }
             />
 
           </div>

@@ -13,3 +13,5 @@ Who wants unwelcome surprises once you’re already on vacation? With this app, 
 //.then(response => console.log(response))
 .then(response => this.setState({ attractions: response.data }))
 } -->
+
+look into screen scraping

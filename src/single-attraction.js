@@ -73,35 +73,66 @@ class SingleAttraction extends Component{
       <div className="singleAtttraction container">
 
         <ul id="worldsDropdown" className="dropdown-content">
-          <li><a href="#!" className="center-align">Main Street, USA</a></li>
+          <li>
+            <Link to='/world/main-street-usa'>
+              Main Street, USA
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a href="#!" className="center-align">Adventureland</a></li>
+          <li>
+            <Link to='/world/adventurland'>
+              Adventureland
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a href="#!" className="center-align">Frontierland</a></li>
+          <li>
+            <Link to='/world/frontierland'>
+              Frontierland
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a href="#!" className="center-align">Liberty Square</a></li>
+          <li>
+            <Link to='/world/liberty-square'>
+              Liberty Square
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a href="#!" className="center-align">Fantasyland</a></li>
+          <li>
+            <Link to='/world/fantasyland'>
+              Fantasyland
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a href="#!" className="center-align">Tomorrowland</a></li>
+          <li>
+            <Link to='/world/tomorrowland'>
+              Tomorrowland
+            </Link>
+          </li>
         </ul>
 
         <ul id="diningDropdown" className="dropdown-content">
-          <li><a className="center-align" href="#!">Quick Service</a></li>
+          <li>
+            <Link className="center-align" to="/dining/quick-service">
+              Quick Service
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a className="center-align" href="#!">Table Service</a></li>
+          <li>
+            <Link className="center-align" to="/dining/table-service">
+              Table Service
+            </Link>
+          </li>
         </ul>
 
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul className="hide-on-med-and-down">
               <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
+                <div className="black-text dropdown-button"
                   data-beloworigin="true"
-                  href="#!"
                   data-activates="worldsDropdown">
                   Worlds
-                </a>
+                </div>
               </li>
 
               <li className="col s4 center-align">
@@ -111,12 +142,11 @@ class SingleAttraction extends Component{
               </li>
 
               <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
+                <div className="black-text dropdown-button"
                   data-beloworigin="true"
-                  href="#!"
                   data-activates="diningDropdown">
                   Dining
-                </a>
+                </div>
               </li>
             </ul>
           </div>

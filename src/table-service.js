@@ -3,50 +3,48 @@ import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 var $ = window.jQuery = require('jquery');
+var restaurants = require('./restaurants.json')
 
-class Attractions extends Component {
+class TableService extends Component {
 
   constructor(){
     super();
     this.state={
-      attractions: [{}]
+      restaurants: [{}]
     }
   }
 
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get('http://localhost:8080')
-      .then(response => response.data.sort(function(a,b){
-        var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-        if(nameA < nameB){
-          return -1
-        } else if (nameA > nameB){
-          return 1
-        } else {
-          return 0
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining.json`)
+      .then(response => response.data[1].map(function(restaurant){
+        var restaurantMatch = restaurants.find(function(elm){
+          return elm["place"] === restaurant["name"];
+        });
+        if(restaurantMatch){
+          restaurant["image"] = restaurantMatch["image"]
+          restaurant["price"] = restaurantMatch["price"]
+          restaurant["type"] = restaurantMatch["type"]
+          restaurant["world"] = restaurantMatch["world"]
         }
+        return restaurant
       }))
-      .then(array => array.filter(object => object.name.includes('Halloween') !== true))
-      .then(array => array.filter(object => object.name.includes('Christmas') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirate and Princess') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirates at Walt Disney World') !== true))
-      //.then(array => console.log(array))
-      .then(array => this.setState({ attractions: array }))
+      .then(response => this.setState({restaurants: response}))
   }
 
   displayState(){
-    if(this.state.attractions.length > 1){
+    if(this.state.restaurants.length > 1){
       return (
         <ul className="row">
-          {this.state.attractions.map(attraction => {
+          {this.state.restaurants.map(restaurant => {
             return (
               <li className="card-panel image-container col s4 center-align">
 
-                <Link to={`/attraction/${attraction.id}`}>
-                  <img className="responsive-img" src={`${attraction.image}`}/>
-                  <div><b>{attraction.name}</b></div>
-                  <div>{this.waitTime(attraction)}</div>
+                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                  <img className="responsive-img" src={`${restaurant.image}`}/>
+                  <div><b>{restaurant.name}</b></div>
+                  <div><em>Price Range: {restaurant.price}</em></div>
                 </Link>
 
               </li>
@@ -57,22 +55,10 @@ class Attractions extends Component {
     }
   }
 
-  waitTime(attraction){
-    // console.log(attraction.status);
-    if(attraction.status === "Operating"){
-      return (
-         <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
-      )
-    } else {
-      return (
-        <div>Status: <em>{attraction.status}</em></div>
-      )
-    }
-  }
-
   render(){
+    console.log(this.state.restaurants);
     return(
-      <div className="allAttractions container">
+      <div className="tableService container">
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
@@ -118,30 +104,33 @@ class Attractions extends Component {
               Quick Service
             </Link>
           </li>
-          <li className="divider"></li>
-          <li>
-            <Link className="center-align" to="/dining/table-service">
-              Table Service
-            </Link>
-          </li>
         </ul>
 
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul className="hide-on-med-and-down">
-              <li className="col s6 center-align">
-                <div className="black-text dropdown-button"
+              <li className="col s4 center-align">
+                <a className="black-text dropdown-button"
                   data-beloworigin="true"
+                  href="#!"
                   data-activates="worldsDropdown">
                   Worlds
-                </div>
+                </a>
               </li>
-              <li className="col s6 center-align">
-                <div className="black-text dropdown-button"
+
+              <li className="col s4 center-align">
+                <Link className="black-text" to="/attractions">
+                  Attractions
+                </Link>
+              </li>
+
+              <li className="col s4 center-align">
+                <a className="black-text dropdown-button"
                   data-beloworigin="true"
+                  href="#!"
                   data-activates="diningDropdown">
                   Dining
-                </div>
+                </a>
               </li>
             </ul>
           </div>
@@ -156,4 +145,4 @@ class Attractions extends Component {
   }
 }
 
-export default Attractions;
+export default TableService;

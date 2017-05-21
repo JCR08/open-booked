@@ -3,76 +3,28 @@ import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 var $ = window.jQuery = require('jquery');
+var restaurants = require('./restaurants.json')
 
-class Attractions extends Component {
+class SingleRestaurant extends Component{
 
   constructor(){
     super();
     this.state={
-      attractions: [{}]
+      restaurant: []
     }
   }
 
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get('http://localhost:8080')
-      .then(response => response.data.sort(function(a,b){
-        var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-        if(nameA < nameB){
-          return -1
-        } else if (nameA > nameB){
-          return 1
-        } else {
-          return 0
-        }
-      }))
-      .then(array => array.filter(object => object.name.includes('Halloween') !== true))
-      .then(array => array.filter(object => object.name.includes('Christmas') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirate and Princess') !== true))
-      .then(array => array.filter(object => object.name.includes('Pirates at Walt Disney World') !== true))
-      //.then(array => console.log(array))
-      .then(array => this.setState({ attractions: array }))
-  }
-
-  displayState(){
-    if(this.state.attractions.length > 1){
-      return (
-        <ul className="row">
-          {this.state.attractions.map(attraction => {
-            return (
-              <li className="card-panel image-container col s4 center-align">
-
-                <Link to={`/attraction/${attraction.id}`}>
-                  <img className="responsive-img" src={`${attraction.image}`}/>
-                  <div><b>{attraction.name}</b></div>
-                  <div>{this.waitTime(attraction)}</div>
-                </Link>
-
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
-  }
-
-  waitTime(attraction){
-    // console.log(attraction.status);
-    if(attraction.status === "Operating"){
-      return (
-         <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
-      )
-    } else {
-      return (
-        <div>Status: <em>{attraction.status}</em></div>
-      )
-    }
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining/${this.props.match.params.permalink}.json`)
+    .then(response => this.setState({restaurant: response.data}))
   }
 
   render(){
+    console.log(this.state.restaurant);
     return(
-      <div className="allAttractions container">
+      <div className="singleRestaurant container">
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
@@ -129,14 +81,21 @@ class Attractions extends Component {
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul className="hide-on-med-and-down">
-              <li className="col s6 center-align">
+              <li className="col s4 center-align">
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"
                   data-activates="worldsDropdown">
                   Worlds
                 </div>
               </li>
-              <li className="col s6 center-align">
+
+              <li className="col s4 center-align">
+                <Link className="black-text" to="/attractions">
+                  Attractions
+                </Link>
+              </li>
+
+              <li className="col s4 center-align">
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"
                   data-activates="diningDropdown">
@@ -148,7 +107,7 @@ class Attractions extends Component {
         </nav>
 
         <section>
-          {this.displayState()}
+
         </section>
 
       </div>
@@ -156,4 +115,4 @@ class Attractions extends Component {
   }
 }
 
-export default Attractions;
+export default SingleRestaurant

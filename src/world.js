@@ -3,19 +3,29 @@ import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 var $ = window.jQuery = require('jquery');
+var restaurants = require('./restaurants.json')
 
-class Attractions extends Component {
+class SpecificWorld extends Component {
 
   constructor(){
     super();
     this.state={
-      attractions: [{}]
+      attractions: [{}],
+      quickService: [],
+      tableService: []
     }
   }
 
   componentDidMount(){
+    let world = this.props.match.params.world.split('-').join(' ')
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
+    this.getAttractions(world);
+    this.getQuickService(world);
+    this.getTableService(world);
+  }
+
+  getAttractions(world){
     axios.get('http://localhost:8080')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
@@ -31,11 +41,91 @@ class Attractions extends Component {
       .then(array => array.filter(object => object.name.includes('Christmas') !== true))
       .then(array => array.filter(object => object.name.includes('Pirate and Princess') !== true))
       .then(array => array.filter(object => object.name.includes('Pirates at Walt Disney World') !== true))
-      //.then(array => console.log(array))
+      .then(array => array.filter(object => object.world == world.charAt(0).toUpperCase() + world.slice(1)))
       .then(array => this.setState({ attractions: array }))
   }
 
-  displayState(){
+  getQuickService(world){
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining.json`)
+      .then(response => response.data[0].map(function(restaurant){
+        var restaurantMatch = restaurants.find(function(elm){
+          return elm["place"] === restaurant["name"];
+        });
+        if(restaurantMatch){
+          restaurant["image"] = restaurantMatch["image"]
+          restaurant["price"] = restaurantMatch["price"]
+          restaurant["type"] = restaurantMatch["type"]
+          restaurant["world"] = restaurantMatch["world"]
+        }
+        return restaurant
+      }))
+      .then(array => array.filter(object => object.world == world.charAt(0).toUpperCase() + world.slice(1)))
+      .then(response => this.setState({ quickService: response }))
+  }
+
+  getTableService(world){
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining.json`)
+      .then(response => response.data[1].map(function(restaurant){
+        var restaurantMatch = restaurants.find(function(elm){
+          return elm["place"] === restaurant["name"];
+        });
+        if(restaurantMatch){
+          restaurant["image"] = restaurantMatch["image"]
+          restaurant["price"] = restaurantMatch["price"]
+          restaurant["type"] = restaurantMatch["type"]
+          restaurant["world"] = restaurantMatch["world"]
+        }
+        return restaurant
+      }))
+      .then(array => array.filter(object => object.world == world.charAt(0).toUpperCase() + world.slice(1)))
+      .then(response => this.setState({ tableService: response }))
+  }
+
+  displayQuickService(){
+    if(this.state.quickService.length > 0){
+      return (
+        <ul className="row">
+          {this.state.quickService.map(restaurant => {
+            return (
+              <li className="card-panel image-container col s4 center-align">
+
+                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                  <img className="responsive-img" src={`${restaurant.image}`}/>
+                  <div><b>{restaurant.name}</b></div>
+                  <div><em>Price Range: {restaurant.price}</em></div>
+                </Link>
+
+              </li>
+            )
+          })}
+        </ul>
+      )
+    }
+  }
+
+  displayTableService(){
+    if(this.state.tableService.length > 0){
+      return (
+        <ul className="row">
+          {this.state.tableService.map(restaurant => {
+            return (
+              <li className="card-panel image-container col s4 center-align">
+
+                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                  <img className="responsive-img" src={`${restaurant.image}`}/>
+                  <div><b>{restaurant.name}</b></div>
+                  <div><em>Price Range: {restaurant.price}</em></div>
+                </Link>
+
+              </li>
+            )
+          })}
+        </ul>
+      )
+    }
+  }
+
+  displayAttractions(){
     if(this.state.attractions.length > 1){
       return (
         <ul className="row">
@@ -58,7 +148,6 @@ class Attractions extends Component {
   }
 
   waitTime(attraction){
-    // console.log(attraction.status);
     if(attraction.status === "Operating"){
       return (
          <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
@@ -71,8 +160,10 @@ class Attractions extends Component {
   }
 
   render(){
+    //console.log(this.state.attractions);
+    console.log(this.state.tableService);
     return(
-      <div className="allAttractions container">
+      <div className="specificWorld container">
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
@@ -129,14 +220,21 @@ class Attractions extends Component {
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul className="hide-on-med-and-down">
-              <li className="col s6 center-align">
+              <li className="col s4 center-align">
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"
                   data-activates="worldsDropdown">
                   Worlds
                 </div>
               </li>
-              <li className="col s6 center-align">
+
+              <li className="col s4 center-align">
+                <Link className="black-text" to="/attractions">
+                  Attractions
+                </Link>
+              </li>
+
+              <li className="col s4 center-align">
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"
                   data-activates="diningDropdown">
@@ -148,12 +246,15 @@ class Attractions extends Component {
         </nav>
 
         <section>
-          {this.displayState()}
+          {this.displayAttractions()}
+          {this.displayQuickService()}
+          {this.displayTableService()}
         </section>
 
       </div>
     )
   }
+
 }
 
-export default Attractions;
+export default SpecificWorld;

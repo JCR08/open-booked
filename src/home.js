@@ -16,9 +16,17 @@ class Home extends Component {
       <div className="homePage container">
 
         <ul id="diningDropdown" className="dropdown-content">
-          <li><a className="center-align" href="#!">Quick Service</a></li>
+          <li>
+            <Link className="center-align" to="/dining/quick-service">
+              Quick Service
+            </Link>
+          </li>
           <li className="divider"></li>
-          <li><a className="center-align" href="#!">Table Service</a></li>
+          <li>
+            <Link className="center-align" to="/dining/table-service">
+              Table Service
+            </Link>
+          </li>
         </ul>
 
         <nav>
@@ -30,12 +38,11 @@ class Home extends Component {
                 </Link>
               </li>
               <li className="col s6 center-align">
-                <a className="black-text dropdown-button"
+                <div className="black-text dropdown-button"
                   data-beloworigin="true"
-                  href="#!"
                   data-activates="diningDropdown">
                   Dining
-                </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -44,22 +51,34 @@ class Home extends Component {
 
         <section className="worlds row">
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Main-Street.svg" alt="Main Street, USA logo"/>
+              <Link to='/world/main-street-usa'>
+                <img className="responsive-img" src="../world-logos/Main-Street.svg" alt="Main Street, USA logo"/>
+              </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Adventureland.svg" alt="Adventureland logo"/>
+              <Link to='/world/adventureland'>
+                <img className="responsive-img" src="../world-logos/Adventureland.svg" alt="Adventureland logo"/>
+              </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Frontierland.svg" alt="Frontierland logo"/>
+              <Link to='/world/frontierland'>
+                <img className="responsive-img" src="../world-logos/Frontierland.svg" alt="Frontierland logo"/>
+              </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Liberty-Square.png" alt="Liberty Square logo"/>
+              <Link to='/world/liberty-square'>
+                <img className="responsive-img" src="../world-logos/Liberty-Square.png" alt="Liberty Square logo"/>
+              </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Fantasyland.png" alt="Fantasyland logo"/>
+              <Link to='/world/fantasyland'>
+                <img className="responsive-img" src="../world-logos/Fantasyland.png" alt="Fantasyland logo"/>
+              </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <img className="responsive-img" src="../world-logos/Tomorrowland.svg" alt="Tomorrowland logo"/>
+              <Link to='/world/tomorrowland'>
+                <img className="responsive-img" src="../world-logos/Tomorrowland.svg" alt="Tomorrowland logo"/>
+              </Link>
             </div>
         </section>
       </div>
