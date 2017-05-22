@@ -51,32 +51,32 @@ class Home extends Component {
 
         <section className="worlds row">
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/main-street-usa'>
+              <Link to='/world/Main-Street-USA'>
                 <img className="responsive-img" src="../world-logos/Main-Street.svg" alt="Main Street, USA logo"/>
               </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/adventureland'>
+              <Link to='/world/Adventureland'>
                 <img className="responsive-img" src="../world-logos/Adventureland.svg" alt="Adventureland logo"/>
               </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/frontierland'>
+              <Link to='/world/Frontierland'>
                 <img className="responsive-img" src="../world-logos/Frontierland.svg" alt="Frontierland logo"/>
               </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/liberty-square'>
+              <Link to='/world/Liberty-Square'>
                 <img className="responsive-img" src="../world-logos/Liberty-Square.png" alt="Liberty Square logo"/>
               </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/fantasyland'>
+              <Link to='/world/Fantasyland'>
                 <img className="responsive-img" src="../world-logos/Fantasyland.png" alt="Fantasyland logo"/>
               </Link>
             </div>
             <div className="world-logos valign-wrapper image-container col s4">
-              <Link to='/world/tomorrowland'>
+              <Link to='/world/Tomorrowland'>
                 <img className="responsive-img" src="../world-logos/Tomorrowland.svg" alt="Tomorrowland logo"/>
               </Link>
             </div>

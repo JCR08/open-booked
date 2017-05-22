@@ -10,7 +10,7 @@ class SingleRestaurant extends Component{
   constructor(){
     super();
     this.state={
-      restaurant: []
+      restaurant: {}
     }
   }
 
@@ -18,7 +18,48 @@ class SingleRestaurant extends Component{
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
     axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining/${this.props.match.params.permalink}.json`)
-    .then(response => this.setState({restaurant: response.data}))
+    .then(function(response){
+      var restaurantMatch = restaurants.find(function(elm){
+        return elm["place"] === response.data["name"];
+      });
+      let restaurant = response.data
+      if(restaurantMatch){
+        restaurant["description"] = restaurantMatch["description"]
+        restaurant["image"] = restaurantMatch["image"]
+        restaurant["price"] = restaurantMatch["price"]
+        restaurant["type"] = restaurantMatch["type"]
+        restaurant["world"] = restaurantMatch["world"]
+      }
+      return restaurant
+    })
+    .then(response => this.setState({restaurant: response}))
+  }
+
+  reservations(rest){
+    if(rest.accepts_reservations){
+      return(
+        <p>Accepts Reservations</p>
+      )
+    }
+  }
+
+  displayState(){
+    const rest = this.state.restaurant;
+    return(
+      <div className="card row">
+        <div className="restaurantImage col s6 center-align">
+          <img className="responsive-img" src={`${rest.image}`} alt="#"/>
+        </div>
+        <div className="restaurantInfo col s6 center-align">
+          <h4><u>{rest.name}</u></h4>
+          <p>Location: {rest.world}</p>
+          <p>{this.reservations(rest)}</p>
+          <p>Food Type: {rest.cuisine}</p>
+          <p>Price Range: {rest.price}</p>
+          <p>{rest.description}</p>
+        </div>
+      </div>
+    )
   }
 
   render(){
@@ -28,37 +69,37 @@ class SingleRestaurant extends Component{
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
-            <Link to='/world/main-street-usa'>
+            <Link to='/world/Main-Street-USA'>
               Main Street, USA
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/adventurland'>
+            <Link to='/world/Adventureland'>
               Adventureland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/frontierland'>
+            <Link to='/world/Frontierland'>
               Frontierland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/liberty-square'>
+            <Link to='/world/Liberty-Square'>
               Liberty Square
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/fantasyland'>
+            <Link to='/world/Fantasyland'>
               Fantasyland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/tomorrowland'>
+            <Link to='/world/Tomorrowland'>
               Tomorrowland
             </Link>
           </li>
@@ -107,7 +148,7 @@ class SingleRestaurant extends Component{
         </nav>
 
         <section>
-
+          {this.displayState()}
         </section>
 
       </div>

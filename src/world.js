@@ -17,8 +17,18 @@ class SpecificWorld extends Component {
   }
 
   componentDidMount(){
-    let world = this.props.match.params.world.split('-').join(' ')
+    let world = this.props.match.params.World.split('-').join(' ')
+    console.log(world);
     window.$ = window.jQuery;
+    $(".dropdown-button").dropdown( { hover: true } );
+    this.getAttractions(world);
+    this.getQuickService(world);
+    this.getTableService(world);
+  }
+
+  componentWillReceiveProps(newProps){
+    let world = newProps.match.params.World.split('-').join(' ')
+    console.log(world);
     $(".dropdown-button").dropdown( { hover: true } );
     this.getAttractions(world);
     this.getQuickService(world);
@@ -84,10 +94,11 @@ class SpecificWorld extends Component {
   displayQuickService(){
     if(this.state.quickService.length > 0){
       return (
-        <ul className="row">
+        <ul className="row col s6">
+          <h4 className="center-align">Quick Service Restaurants</h4>
           {this.state.quickService.map(restaurant => {
             return (
-              <li className="card-panel image-container col s4 center-align">
+              <li className="card-panel image-container col s8 offset-s2 center-align">
 
                 <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
                   <img className="responsive-img" src={`${restaurant.image}`}/>
@@ -106,10 +117,11 @@ class SpecificWorld extends Component {
   displayTableService(){
     if(this.state.tableService.length > 0){
       return (
-        <ul className="row">
+        <ul className="row col s6">
+          <h4 className="center-align">Table Service Restaurants</h4>
           {this.state.tableService.map(restaurant => {
             return (
-              <li className="card-panel image-container col s4 center-align">
+              <li className="card-panel image-container col s8 offset-s2 center-align">
 
                 <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
                   <img className="responsive-img" src={`${restaurant.image}`}/>
@@ -129,6 +141,7 @@ class SpecificWorld extends Component {
     if(this.state.attractions.length > 1){
       return (
         <ul className="row">
+          <h4 className="center-align">Attractions</h4>
           {this.state.attractions.map(attraction => {
             return (
               <li className="card-panel image-container col s4 center-align">
@@ -148,14 +161,16 @@ class SpecificWorld extends Component {
   }
 
   waitTime(attraction){
-    if(attraction.status === "Operating"){
-      return (
-         <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
-      )
-    } else {
-      return (
-        <div>Status: <em>{attraction.status}</em></div>
-      )
+    if(attraction.type ==="ride"){
+      if(attraction.status === "Operating"){
+        return (
+           <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
+        )
+      } else {
+        return (
+          <div>Status: <em>{attraction.status}</em></div>
+        )
+      }
     }
   }
 
@@ -167,37 +182,37 @@ class SpecificWorld extends Component {
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
-            <Link to='/world/main-street-usa'>
+            <Link to='/world/Main-Street-USA'>
               Main Street, USA
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/adventurland'>
+            <Link to='/world/Adventureland'>
               Adventureland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/frontierland'>
+            <Link to='/world/Frontierland'>
               Frontierland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/liberty-square'>
+            <Link to='/world/Liberty-Square'>
               Liberty Square
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/fantasyland'>
+            <Link to='/world/Fantasyland'>
               Fantasyland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/tomorrowland'>
+            <Link to='/world/Tomorrowland'>
               Tomorrowland
             </Link>
           </li>
@@ -247,8 +262,10 @@ class SpecificWorld extends Component {
 
         <section>
           {this.displayAttractions()}
-          {this.displayQuickService()}
-          {this.displayTableService()}
+          <div className="row">
+            {this.displayQuickService()}
+            {this.displayTableService()}
+          </div>
         </section>
 
       </div>

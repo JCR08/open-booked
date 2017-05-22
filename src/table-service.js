@@ -44,6 +44,7 @@ class TableService extends Component {
                 <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
                   <img className="responsive-img" src={`${restaurant.image}`}/>
                   <div><b>{restaurant.name}</b></div>
+                  <div>Location: {restaurant.world}</div>
                   <div><em>Price Range: {restaurant.price}</em></div>
                 </Link>
 
@@ -62,37 +63,37 @@ class TableService extends Component {
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
-            <Link to='/world/main-street-usa'>
+            <Link to='/world/Main-Street-USA'>
               Main Street, USA
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/adventurland'>
+            <Link to='/world/Adventureland'>
               Adventureland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/frontierland'>
+            <Link to='/world/Frontierland'>
               Frontierland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/liberty-square'>
+            <Link to='/world/Liberty-Square'>
               Liberty Square
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/fantasyland'>
+            <Link to='/world/Fantasyland'>
               Fantasyland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/tomorrowland'>
+            <Link to='/world/Tomorrowland'>
               Tomorrowland
             </Link>
           </li>

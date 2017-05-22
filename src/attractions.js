@@ -46,6 +46,7 @@ class Attractions extends Component {
                 <Link to={`/attraction/${attraction.id}`}>
                   <img className="responsive-img" src={`${attraction.image}`}/>
                   <div><b>{attraction.name}</b></div>
+                  <div>Location: {attraction.world}</div>
                   <div>{this.waitTime(attraction)}</div>
                 </Link>
 
@@ -58,15 +59,16 @@ class Attractions extends Component {
   }
 
   waitTime(attraction){
-    // console.log(attraction.status);
-    if(attraction.status === "Operating"){
-      return (
-         <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
-      )
-    } else {
-      return (
-        <div>Status: <em>{attraction.status}</em></div>
-      )
+    if(attraction.type ==="ride"){
+      if(attraction.status === "Operating"){
+        return (
+           <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
+        )
+      } else {
+        return (
+          <div>Status: <em>{attraction.status}</em></div>
+        )
+      }
     }
   }
 
@@ -76,37 +78,37 @@ class Attractions extends Component {
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
-            <Link to='/world/main-street-usa'>
+            <Link to='/world/Main-Street-USA'>
               Main Street, USA
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/adventurland'>
+            <Link to='/world/Adventureland'>
               Adventureland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/frontierland'>
+            <Link to='/world/Frontierland'>
               Frontierland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/liberty-square'>
+            <Link to='/world/Liberty-Square'>
               Liberty Square
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/fantasyland'>
+            <Link to='/world/Fantasyland'>
               Fantasyland
             </Link>
           </li>
           <li className="divider"></li>
           <li>
-            <Link to='/world/tomorrowland'>
+            <Link to='/world/Tomorrowland'>
               Tomorrowland
             </Link>
           </li>

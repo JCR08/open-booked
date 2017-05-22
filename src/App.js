@@ -43,7 +43,7 @@ class App extends Component {
               <Home {...defaultProps}/> }
             />
 
-            <Route path="/world/:world?" render={(defaultProps) =>
+            <Route path="/world/:World?" render={(defaultProps) =>
               <SpecificWorld {...defaultProps}/> }
             />
 
