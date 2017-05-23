@@ -92,76 +92,70 @@ class SpecificWorld extends Component {
   }
 
   displayQuickService(){
-    if(this.state.quickService.length > 0){
-      return (
-        <ul className="row col s6">
-          <h4 className="center-align">Quick Service Restaurants</h4>
-          {this.state.quickService.map(restaurant => {
-            return (
-              <li className="card-panel image-container col s8 offset-s2 center-align">
+    return (
+      <ul className="row col s6">
+        <h4 className="center-align">Quick Service Restaurants</h4>
+        {this.state.quickService.map(restaurant => {
+          return (
+            <li className="card-panel image-container col s8 offset-s2 center-align">
 
-                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
-                  <img className="responsive-img" src={`${restaurant.image}`}/>
-                  <div><b>{restaurant.name}</b></div>
-                  <div><em>Price Range: {restaurant.price}</em></div>
-                </Link>
+              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                <img className="responsive-img" src={`${restaurant.image}`}/>
+                <div><b>{restaurant.name}</b></div>
+                <div><em>Price Range: {restaurant.price}</em></div>
+              </Link>
 
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   displayTableService(){
-    if(this.state.tableService.length > 0){
-      return (
-        <ul className="row col s6">
-          <h4 className="center-align">Table Service Restaurants</h4>
-          {this.state.tableService.map(restaurant => {
-            return (
-              <li className="card-panel image-container col s8 offset-s2 center-align">
+    return (
+      <ul className="row col s6">
+        <h4 className="center-align">Table Service Restaurants</h4>
+        {this.state.tableService.map(restaurant => {
+          return (
+            <li className="card-panel image-container col s8 offset-s2 center-align">
 
-                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
-                  <img className="responsive-img" src={`${restaurant.image}`}/>
-                  <div><b>{restaurant.name}</b></div>
-                  <div><em>Price Range: {restaurant.price}</em></div>
-                </Link>
+              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                <img className="responsive-img" src={`${restaurant.image}`}/>
+                <div><b>{restaurant.name}</b></div>
+                <div><em>Price Range: {restaurant.price}</em></div>
+              </Link>
 
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   displayAttractions(){
-    if(this.state.attractions.length > 1){
-      return (
-        <ul className="row">
-          <h4 className="center-align">Attractions</h4>
-          {this.state.attractions.map(attraction => {
-            return (
-              <li className="card-panel image-container col s4 center-align">
+    return (
+      <ul className="row">
+        <h4 className="center-align">Attractions</h4>
+        {this.state.attractions.map(attraction => {
+          return (
+            <li className="card-panel image-container col s4 center-align">
 
-                <Link to={`/attraction/${attraction.id}`}>
-                  <img className="responsive-img" src={`${attraction.image}`}/>
-                  <div><b>{attraction.name}</b></div>
-                  <div>{this.waitTime(attraction)}</div>
-                </Link>
+              <Link to={`/attraction/${attraction.id}`}>
+                <img className="responsive-img" src={`${attraction.image}`}/>
+                <div><b>{attraction.name}</b></div>
+                <div>{this.waitTime(attraction)}</div>
+              </Link>
 
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   waitTime(attraction){
-    if(attraction.type ==="ride"){
+    if(attraction.type === "ride"){
       if(attraction.status === "Operating"){
         return (
            <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
@@ -261,10 +255,10 @@ class SpecificWorld extends Component {
         </nav>
 
         <section>
-          {this.displayAttractions()}
+          {this.state.attractions.length > 1 && this.displayAttractions()}
           <div className="row">
-            {this.displayQuickService()}
-            {this.displayTableService()}
+            {this.state.quickService.length > 0 && this.displayQuickService()}
+            {this.state.tableService.length > 0 && this.displayTableService()}
           </div>
         </section>
 

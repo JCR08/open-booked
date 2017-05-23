@@ -24,7 +24,6 @@ class SingleAttraction extends Component{
 
   displayState(){
     const attraction = this.state.attraction
-    // console.log(attraction.image);
     return(
       <div className="card row">
         <div className="attractionImage col s6 center-align">
@@ -153,7 +152,7 @@ class SingleAttraction extends Component{
         </nav>
 
         <section>
-          {this.displayState()}
+          {this.state.attraction.name && this.displayState()}
         </section>
 
       </div>

@@ -34,26 +34,24 @@ class TableService extends Component {
   }
 
   displayState(){
-    if(this.state.restaurants.length > 1){
-      return (
-        <ul className="row">
-          {this.state.restaurants.map(restaurant => {
-            return (
-              <li className="card-panel image-container col s4 center-align">
+    return (
+      <ul className="row">
+        {this.state.restaurants.map(restaurant => {
+          return (
+            <li className="card-panel image-container col s4 center-align">
 
-                <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
-                  <img className="responsive-img" src={`${restaurant.image}`}/>
-                  <div><b>{restaurant.name}</b></div>
-                  <div>Location: {restaurant.world}</div>
-                  <div><em>Price Range: {restaurant.price}</em></div>
-                </Link>
+              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+                <img className="responsive-img" src={`${restaurant.image}`}/>
+                <div><b>{restaurant.name}</b></div>
+                <div>Location: {restaurant.world}</div>
+                <div><em>Price Range: {restaurant.price}</em></div>
+              </Link>
 
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   render(){
@@ -138,7 +136,7 @@ class TableService extends Component {
         </nav>
 
         <section>
-          {this.displayState()}
+          {this.state.restaurants.length > 1 && this.displayState()}
         </section>
 
       </div>

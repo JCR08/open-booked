@@ -10,7 +10,8 @@ class SingleRestaurant extends Component{
   constructor(){
     super();
     this.state={
-      restaurant: {}
+      restaurant: {},
+      menu: [],
     }
   }
 
@@ -26,6 +27,7 @@ class SingleRestaurant extends Component{
       if(restaurantMatch){
         restaurant["description"] = restaurantMatch["description"]
         restaurant["image"] = restaurantMatch["image"]
+        restaurant["menus"] = restaurantMatch["menus"]
         restaurant["price"] = restaurantMatch["price"]
         restaurant["type"] = restaurantMatch["type"]
         restaurant["world"] = restaurantMatch["world"]
@@ -62,8 +64,58 @@ class SingleRestaurant extends Component{
     )
   }
 
+  displayMenuButtons(){
+    const rest = this.state.restaurant;
+    return(
+      <ul className="menuButtonDisplay card row col s4 center-align">
+        <h5><u>Choose Menu</u></h5>
+        {rest.menus.map(menu => {
+          if(menu.url){
+            return(
+              <li className="col s6 center-align">
+                <div onClick={this.setMenuState.bind(this, menu)} className="menuButton waves-effect waves-light btn #bbdefb blue lighten-4">{menu.meal}</div>
+              </li>
+          )}
+        }
+      )}
+      </ul>
+    )
+  }
+
+  setMenuState(menu){
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining/${this.props.match.params.permalink}/menus/${menu.url}.json`)
+      .then(response => this.setState({ menu: response.data[2].menu_links }))
+  }
+
+  displayMenu(){
+    const menu = this.state.menu;
+    console.log(menu);
+    return (
+      <div className="menuDisplay card col s7 push-s1">
+        {menu.map(object => {
+          return (
+            <ul className="col s12 ">
+              <li className="center-align">
+                <b><u>{object.group}</u></b>
+              </li>
+              <li className="center-align">
+                {object.links.map(items => {
+                  return(
+                    <span>
+                      <div className="col s8 left-align">{items.name}</div>
+                      <div className="col s2 push-s2 right-align">{items.price}</div>
+                    </span>
+                  )
+                })}
+              </li>
+            </ul>
+          )
+        })}
+      </div>
+    )
+  }
+
   render(){
-    console.log(this.state.restaurant);
     return(
       <div className="singleRestaurant container">
 
@@ -147,9 +199,15 @@ class SingleRestaurant extends Component{
           </div>
         </nav>
 
-        <section>
-          {this.displayState()}
+        <section className="info">
+          {this.state.restaurant.name && this.displayState()}
         </section>
+
+        <section className="menu row">
+          {this.state.restaurant.menus && this.displayMenuButtons()}
+          {this.state.menu.length > 0 && this.displayMenu() }
+        </section>
+
 
       </div>
     )

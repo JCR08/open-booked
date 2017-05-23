@@ -36,3 +36,42 @@ h1 {
 section {
   margin-top: 1%;
 }
+
+.menu {
+  height: 17rem;
+}
+
+.menuButton {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  width: 105%;
+  padding: 0;
+}
+
+.menuDisplay{
+  height: 100%;
+  overflow: scroll;
+}
+
+.menuDisplay::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.menuDisplay::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.menuDisplay::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.menuDisplay::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.menuDisplay::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 8px;
+}

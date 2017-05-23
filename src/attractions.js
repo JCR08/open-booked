@@ -36,26 +36,25 @@ class Attractions extends Component {
   }
 
   displayState(){
-    if(this.state.attractions.length > 1){
-      return (
-        <ul className="row">
-          {this.state.attractions.map(attraction => {
-            return (
-              <li className="card-panel image-container col s4 center-align">
 
-                <Link to={`/attraction/${attraction.id}`}>
-                  <img className="responsive-img" src={`${attraction.image}`}/>
-                  <div><b>{attraction.name}</b></div>
-                  <div>Location: {attraction.world}</div>
-                  <div>{this.waitTime(attraction)}</div>
-                </Link>
+    return (
+      <ul className="row">
+        {this.state.attractions.map(attraction => {
+          return (
+            <li className="card-panel image-container col s4 center-align">
 
-              </li>
-            )
-          })}
-        </ul>
-      )
-    }
+              <Link to={`/attraction/${attraction.id}`}>
+                <img className="responsive-img" src={`${attraction.image}`}/>
+                <div><b>{attraction.name}</b></div>
+                <div>Location: {attraction.world}</div>
+                <div>{this.waitTime(attraction)}</div>
+              </Link>
+
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   waitTime(attraction){
@@ -73,6 +72,7 @@ class Attractions extends Component {
   }
 
   render(){
+    console.log(this.state.attractions);
     return(
       <div className="allAttractions container">
 
@@ -150,7 +150,7 @@ class Attractions extends Component {
         </nav>
 
         <section>
-          {this.displayState()}
+          {this.state.attractions.length > 1 && this.displayState()}
         </section>
 
       </div>
