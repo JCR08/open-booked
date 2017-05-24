@@ -2,6 +2,8 @@ h1 {
   font-family: 'Disney';
 }
 
+@font-face {font-family: "Disney"; src: url('http://static.tumblr.com/npggxjg/VdAlzs1dx/disney.otf');}
+
 .commentCard {
   margin-top: 1%;
   height: 4rem;
@@ -62,8 +64,6 @@ h1 {
 .login {
   text-align: right;
 }
-
-@font-face {font-family: "Disney"; src: url('http://static.tumblr.com/npggxjg/VdAlzs1dx/disney.otf');}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

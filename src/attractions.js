@@ -16,7 +16,7 @@ class Attractions extends Component {
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get('http://localhost:8080')
+    axios.get('http://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
         if(nameA < nameB){

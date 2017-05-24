@@ -59,7 +59,7 @@ class SpecificWorld extends Component {
   }
 
   getAttractions(world){
-    axios.get('http://localhost:8080')
+    axios.get('http://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
         if(nameA < nameB){
@@ -263,8 +263,6 @@ class SpecificWorld extends Component {
   }
 
   render(){
-    //console.log(this.state.attractions);
-    console.log(this.state.tableService);
     return(
       <div className="specificWorld container">
 
