@@ -2,7 +2,7 @@ h1 {
   font-family: 'Disney';
 }
 
-@font-face {font-family: "Disney"; src: url('http://static.tumblr.com/npggxjg/VdAlzs1dx/disney.otf');}
+@font-face {font-family: "Disney"; src: url('https://static.tumblr.com/npggxjg/VdAlzs1dx/disney.otf');}
 
 .commentCard {
   margin-top: 1%;

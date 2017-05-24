@@ -59,7 +59,7 @@ class SpecificWorld extends Component {
   }
 
   getAttractions(world){
-    axios.get('http://intense-harbor-66125.herokuapp.com')
+    axios.get('https://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
         if(nameA < nameB){

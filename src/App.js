@@ -39,17 +39,6 @@ class App extends Component {
     })
   }
 
-  // componentWillReceiveProps(user){
-  //   if(user){
-  //     this.setState({
-  //       user: user
-  //     })
-  //   } else {
-  //     this.setState({
-  //       user: {}
-  //     })
-  //   }
-  // }
 
   loginOrLogoutButton(){
     if (this.state.user.uid) {

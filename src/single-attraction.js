@@ -20,7 +20,7 @@ class SingleAttraction extends Component{
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get('http://intense-harbor-66125.herokuapp.com')
+    axios.get('https://intense-harbor-66125.herokuapp.com')
     .then(response => response.data.filter(data => data.id.includes(`${this.props.match.params.id}`) == true))
     .then(object => this.setState({ attraction: object[0] }))
     base.auth().onAuthStateChanged(user => {
