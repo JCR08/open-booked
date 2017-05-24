@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import base from './rebase';
 var $ = window.jQuery = require('jquery');
 var restaurants = require('./restaurants.json')
 
@@ -10,6 +11,8 @@ class SpecificWorld extends Component {
   constructor(){
     super();
     this.state={
+      user: {},
+      comments: [],
       attractions: [{}],
       quickService: [],
       tableService: []
@@ -23,6 +26,28 @@ class SpecificWorld extends Component {
     this.getAttractions(world);
     this.getQuickService(world);
     this.getTableService(world);
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+        base.syncState(`/world/${this.props.match.params.World}/comments`, {
+          context: this,
+          state: "comments",
+          asArray: true
+        })
+      } else {
+        this.setState({
+          user: {},
+          comments: {}
+        })
+      }
+    })
+    base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
+      context: this,
+      state: "comments",
+      asArray: true
+    })
   }
 
   componentWillReceiveProps(newProps){
@@ -166,6 +191,77 @@ class SpecificWorld extends Component {
     }
   }
 
+  submitComment(event){
+    event.preventDefault();
+    console.log(this.state.user);
+    const comment = this.comment.value;
+    const userName = this.state.user.displayName
+    const userAvatar = this.state.user.photoURL
+    let newComment = base.push(`/world/${this.props.match.params.World}/comments`, {
+      data: {
+        comment,
+        userName,
+        userAvatar
+      }
+    })
+    this.comment.value = '';
+  }
+
+  displayComment(){
+    if(this.state.user.uid){
+      return(
+        <div className="card row">
+          <div className="commentDisplay col s12 center-align">
+            <div>
+              {this.state.comments.map(comment => {
+                return (
+                  <div className="commentCard row center-align valign-wrapper">
+                    <div className="row col s4">
+                      <img src={`${comment.userAvatar}`} alt="" className="commentAvatar col s3 offset-s4 circle"/>
+                      <div className="col s12 center-align">{comment.userName}</div>
+                    </div>
+                    <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          <div className="leaveComment row col s12 center-align">
+            <form className="row"
+              onSubmit={this.submitComment.bind(this)}>
+              <input
+                className="col s8 offset-s1"
+                placeholder='Leave a Comment'
+                ref={element => this.comment = element}
+              />
+              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i className="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      )
+    } else {
+      return(
+        <div className="row">
+          <div className="col s12 center-align">
+            <div onClick={this.login.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Login to view or leave comments</div>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  login (){
+    var authHandler = (error, data) => {
+      this.setState({
+        user: data.user
+      })
+    }
+    base.authWithOAuthPopup('google', authHandler)
+  }
+
   render(){
     //console.log(this.state.attractions);
     console.log(this.state.tableService);
@@ -258,6 +354,10 @@ class SpecificWorld extends Component {
             {this.state.quickService.length > 0 && this.displayQuickService()}
             {this.state.tableService.length > 0 && this.displayTableService()}
           </div>
+        </section>
+
+        <section>
+          {this.displayComment()}
         </section>
 
       </div>

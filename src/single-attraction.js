@@ -97,9 +97,11 @@ class SingleAttraction extends Component{
     const comment = this.comment.value;
     const userName = this.state.user.displayName
     const userAvatar = this.state.user.photoURL
+    const attraction = this.state.attraction.name
     let newComment = base.push(`/attraction/${this.props.match.params.id}/comments`, {
       data: {
         comment,
+        attraction,
         userName,
         userAvatar
       }
