@@ -72,7 +72,6 @@ class Attractions extends Component {
   }
 
   render(){
-    console.log(this.state.attractions);
     return(
       <div className="allAttractions container">
 

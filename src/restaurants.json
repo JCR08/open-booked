@@ -168,11 +168,11 @@
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
-      {"meal": "Lunch", "url": ""},
+      {"meal": "Lunch", "url": "skipper-canteen-all-day-menu"},
       {"meal": "Kids Lunch", "url": "kids-menu"},
-      {"meal": "Dinner", "url": ""},
+      {"meal": "Dinner", "url": "skipper-canteen-all-day-menu"},
       {"meal": "Kids Dinner", "url": "kids-menu"},
-      {"meal": "General Menu", "url": "skipper-canteen-all-day-menu"},
+      {"meal": "General Menu", "url": ""},
       {"meal": "Dessert", "url": "dessert-menu"}
     ],
     "price": "$$",

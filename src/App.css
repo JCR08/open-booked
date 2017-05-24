@@ -17,6 +17,9 @@ h1 {
   color: white;
 }
 
+.userAvatar {
+  height: 3rem;
+}
 
 .login {
   text-align: right;

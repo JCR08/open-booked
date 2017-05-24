@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import base from './rebase';
 var $ = window.jQuery = require('jquery');
 
 class SingleAttraction extends Component{
@@ -9,7 +10,10 @@ class SingleAttraction extends Component{
   constructor(){
     super();
     this.state={
+      user: {},
+      comments: [],
       attraction: []
+
     }
   }
 
@@ -20,7 +24,30 @@ class SingleAttraction extends Component{
     .then(response => response.data.filter(data => data.id.includes(`${this.props.match.params.id}`) == true))
     //.then(object => console.log(object))
     .then(object => this.setState({ attraction: object[0] }))
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+      } else {
+        this.setState({
+          user: {}
+        })
+      }
+    })
   }
+
+  // componentWillReceiveProps(user){
+  //   if(user){
+  //     this.setState({
+  //       user: user
+  //     })
+  //   } else {
+  //     this.setState({
+  //       user: {}
+  //     })
+  //   }
+  // }
 
   displayState(){
     const attraction = this.state.attraction
@@ -55,7 +82,6 @@ class SingleAttraction extends Component{
   }
 
   fastpass(attraction){
-    console.log(attraction.fastPass);
     if(attraction.fastPass == true){
       return (
         <p>Fastpass is available for this attraction.</p>
@@ -67,7 +93,49 @@ class SingleAttraction extends Component{
     }
   }
 
+  displayComment(){
+    console.log(this.state.user);
+    if(this.state.user.uid){
+      return(
+        <div className="card row">
+          <div className="commentDisplay col s12 center-align">
+            poop
+          </div>
+          <div className="leaveComment row col s12 center-align">
+            <form onSubmit="">
+              <input
+                placeholder='Leave a Comment'
+              />
+              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i className="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      )
+    } else {
+      return(
+        <div className="row">
+          <div className="col s12 center-align">
+            <div onClick={this.login.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Login to view or leave comments</div>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  login (){
+    var authHandler = (error, data) => {
+      this.setState({
+        user: data.user
+      })
+    }
+    base.authWithOAuthPopup('google', authHandler)
+  }
+
   render(){
+    console.log(this.state.user);
     return(
       <div className="singleAtttraction container">
 
@@ -153,6 +221,10 @@ class SingleAttraction extends Component{
 
         <section>
           {this.state.attraction.name && this.displayState()}
+        </section>
+
+        <section>
+          {this.displayComment()}
         </section>
 
       </div>

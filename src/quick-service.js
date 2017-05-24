@@ -55,7 +55,6 @@ class QuickService extends Component {
   }
 
   render(){
-    console.log(this.state.restaurants);
     return(
       <div className="quickService container">
 

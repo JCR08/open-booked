@@ -18,7 +18,6 @@ class SpecificWorld extends Component {
 
   componentDidMount(){
     let world = this.props.match.params.World.split('-').join(' ')
-    console.log(world);
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
     this.getAttractions(world);
@@ -28,7 +27,6 @@ class SpecificWorld extends Component {
 
   componentWillReceiveProps(newProps){
     let world = newProps.match.params.World.split('-').join(' ')
-    console.log(world);
     $(".dropdown-button").dropdown( { hover: true } );
     this.getAttractions(world);
     this.getQuickService(world);

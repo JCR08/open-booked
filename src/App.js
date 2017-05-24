@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
   Link
   } from 'react-router-dom';
 import logo from './logo.gif';
+import base from './rebase';
 import Home from './home';
 import SpecificWorld from './world';
 import Attractions from './attractions';
@@ -24,6 +24,63 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    window.$ = window.jQuery;
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+      } else {
+        this.setState({
+          user: {}
+        })
+      }
+    })
+  }
+
+  // componentWillReceiveProps(user){
+  //   if(user){
+  //     this.setState({
+  //       user: user
+  //     })
+  //   } else {
+  //     this.setState({
+  //       user: {}
+  //     })
+  //   }
+  // }
+
+  loginOrLogoutButton(){
+    if (this.state.user.uid) {
+      return (
+        <div className="center-align">
+          <img src={`${this.state.user.photoURL}`} alt="" className="userAvatar circle"/>
+          <div>Welcome, {this.state.user.displayName}</div>
+          <div onClick={this.logout.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Logout</div>
+        </div>
+      )
+    } else {
+      return <button onClick={this.login.bind(this)}>Login</button>
+    }
+  }
+
+  login (){
+    var authHandler = (error, data) => {
+      this.setState({
+        user: data.user
+      })
+    }
+    base.authWithOAuthPopup('google', authHandler)
+  }
+
+  logout(){
+    base.unauth()
+    this.setState({
+      user: {}
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -34,7 +91,7 @@ class App extends Component {
             </Link>
             <img src={logo} className="App-logo" alt="logo" />
             <div className="login">
-              login
+              {this.loginOrLogoutButton()}
             </div>
           </header>
           <div className="body">
