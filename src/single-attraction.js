@@ -28,13 +28,18 @@ class SingleAttraction extends Component{
         this.setState({
           user: user
         })
+        base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
+          context: this,
+          state: "comments",
+          asArray: true
+        })
       } else {
         this.setState({
-          user: {}
+          user: {},
+          comments: {}
         })
       }
     })
-    console.log(this.state.attraction.name);
     base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
 	    context: this,
 	    state: "comments",
@@ -88,13 +93,17 @@ class SingleAttraction extends Component{
 
   submitComment(event){
     event.preventDefault();
+    console.log(this.state.user);
     const comment = this.comment.value;
+    const userName = this.state.user.displayName
+    const userAvatar = this.state.user.photoURL
     let newComment = base.push(`/attraction/${this.props.match.params.id}/comments`, {
-      data: {comment}
+      data: {
+        comment,
+        userName,
+        userAvatar
+      }
     })
-    // this.setState({
-    //   comments: this.state.comments.concat([comment])
-    // })
     this.comment.value = '';
   }
 
@@ -102,10 +111,26 @@ class SingleAttraction extends Component{
     if(this.state.user.uid){
       return(
         <div className="card row">
-
+          <div className="commentDisplay col s12 center-align">
+            <div>
+              {this.state.comments.map(comment => {
+                return (
+                  <div className="commentCard row center-align valign-wrapper">
+                    <div className="row col s4">
+                      <img src={`${comment.userAvatar}`} alt="" className="commentAvatar col s3 offset-s4 circle"/>
+                      <div className="col s12 center-align">{comment.userName}</div>
+                    </div>
+                    <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
           <div className="leaveComment row col s12 center-align">
-            <form onSubmit={this.submitComment.bind(this)}>
+            <form className="row"
+              onSubmit={this.submitComment.bind(this)}>
               <input
+                className="col s8 offset-s1"
                 placeholder='Leave a Comment'
                 ref={element => this.comment = element}
               />
