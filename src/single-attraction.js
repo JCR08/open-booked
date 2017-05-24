@@ -22,7 +22,6 @@ class SingleAttraction extends Component{
     $(".dropdown-button").dropdown( { hover: true } );
     axios.get('http://localhost:8080')
     .then(response => response.data.filter(data => data.id.includes(`${this.props.match.params.id}`) == true))
-    //.then(object => console.log(object))
     .then(object => this.setState({ attraction: object[0] }))
     base.auth().onAuthStateChanged(user => {
       if(user){
@@ -35,19 +34,13 @@ class SingleAttraction extends Component{
         })
       }
     })
+    console.log(this.state.attraction.name);
+    base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
+	    context: this,
+	    state: "comments",
+	    asArray: true
+    })
   }
-
-  // componentWillReceiveProps(user){
-  //   if(user){
-  //     this.setState({
-  //       user: user
-  //     })
-  //   } else {
-  //     this.setState({
-  //       user: {}
-  //     })
-  //   }
-  // }
 
   displayState(){
     const attraction = this.state.attraction
@@ -93,18 +86,28 @@ class SingleAttraction extends Component{
     }
   }
 
+  submitComment(event){
+    event.preventDefault();
+    const comment = this.comment.value;
+    let newComment = base.push(`/attraction/${this.props.match.params.id}/comments`, {
+      data: {comment}
+    })
+    // this.setState({
+    //   comments: this.state.comments.concat([comment])
+    // })
+    this.comment.value = '';
+  }
+
   displayComment(){
-    console.log(this.state.user);
     if(this.state.user.uid){
       return(
         <div className="card row">
-          <div className="commentDisplay col s12 center-align">
-            poop
-          </div>
+
           <div className="leaveComment row col s12 center-align">
-            <form onSubmit="">
+            <form onSubmit={this.submitComment.bind(this)}>
               <input
                 placeholder='Leave a Comment'
+                ref={element => this.comment = element}
               />
               <button className="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i className="material-icons right">send</i>
@@ -135,7 +138,7 @@ class SingleAttraction extends Component{
   }
 
   render(){
-    console.log(this.state.user);
+    console.log(this.state.comments);
     return(
       <div className="singleAtttraction container">
 
