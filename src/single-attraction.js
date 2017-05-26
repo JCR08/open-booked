@@ -223,7 +223,7 @@ class SingleAttraction extends Component{
 
         <nav>
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
-            <ul className="hide-on-med-and-down">
+            <ul>
               <li className="col s4 center-align">
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"

@@ -7,11 +7,3 @@ The problem with trying to book a Disney vacation is that most of the informatio
 With Open Book Disney (name is a work in progress) people will have an easier time finding the specific information they are looking for, whether it be about an attraction, a restaurant, or hotel as well as leave meaningful comments and feedback about their specific experiences. Did you love it, but don’t think it’s worth the 2 hour wait? Leave a comment. Which restaurant will be the best option for mom and dad for that night grandma watches the kids back at the hotel?
 
 Who wants unwelcome surprises once you’re already on vacation? With this app, it turns Disney vacation planning into an Open Book!
-
-
-<!-- axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/attractions.json`)
-//.then(response => console.log(response))
-.then(response => this.setState({ attractions: response.data }))
-} -->
-
-look into screen scraping
