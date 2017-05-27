@@ -8,6 +8,8 @@ import logo from './logo.gif';
 import base from './rebase';
 import Home from './home';
 import SpecificWorld from './world';
+import Hotels from './hotels';
+import SingleHotel from './single-hotel';
 import Attractions from './attractions';
 import SingleAttraction from './single-attraction';
 import QuickService from './quick-service';
@@ -97,6 +99,14 @@ class App extends Component {
               <Attractions {...defaultProps}/> }
             />
 
+            <Route exact path="/hotels" render={(defaultProps) =>
+              <Hotels {...defaultProps}/> }
+            />
+
+            <Route path="/hotel/:specifichotel?" render={(defaultProps) =>
+              <SingleHotel {...defaultProps}/> }
+            />
+
             <Route path="/attraction/:id?" render={(defaultProps) =>
               <SingleAttraction {...defaultProps}/> }
             />
@@ -109,7 +119,7 @@ class App extends Component {
               <TableService {...defaultProps}/> }
             />
 
-            <Route path="/dining/quick-service-restaurant/:permalink?" render={(defaultProps) =>
+            <Route path="/dining/restaurant/:permalink?" render={(defaultProps) =>
               <SingleRestaurant {...defaultProps}/> }
             />
 

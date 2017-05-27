@@ -40,11 +40,6 @@ class SingleAttraction extends Component{
         })
       }
     })
-    base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
-	    context: this,
-	    state: "comments",
-	    asArray: true
-    })
   }
 
   displayState(){

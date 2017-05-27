@@ -40,7 +40,7 @@ class TableService extends Component {
           return (
             <li className="card-panel image-container col s4 center-align">
 
-              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+              <Link to={`/dining/restaurant/${restaurant.permalink}`}>
                 <img className="responsive-img" src={`${restaurant.image}`}/>
                 <div><b>{restaurant.name}</b></div>
                 <div>Location: {restaurant.world}</div>

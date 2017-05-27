@@ -2,61 +2,20 @@ import React, { Component } from 'react';
 import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import base from './rebase';
 var $ = window.jQuery = require('jquery');
-var restaurants = require('./restaurants.json')
 
-class QuickService extends Component {
-
-  constructor(){
-    super();
-    this.state={
-      restaurants: [{}]
-    }
-  }
+class SingleHotel extends Component{
 
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining.json`)
-      .then(response => response.data[0].map(function(restaurant){
-        var restaurantMatch = restaurants.find(function(elm){
-          return elm["place"] === restaurant["name"];
-        });
-        if(restaurantMatch){
-          restaurant["image"] = restaurantMatch["image"]
-          restaurant["price"] = restaurantMatch["price"]
-          restaurant["type"] = restaurantMatch["type"]
-          restaurant["world"] = restaurantMatch["world"]
-        }
-        return restaurant
-      }))
-      .then(response => this.setState({restaurants: response}))
   }
 
-  displayState(){
-    return (
-      <ul className="row">
-        {this.state.restaurants.map(restaurant => {
-          return (
-            <li className="card-panel image-container col s4 center-align">
-
-              <Link to={`/dining/restaurant/${restaurant.permalink}`}>
-                <img className="responsive-img" src={`${restaurant.image}`}/>
-                <div><b>{restaurant.name}</b></div>
-                <div>Location: {restaurant.world}</div>
-                <div><em>Price Range: {restaurant.price}</em></div>
-              </Link>
-
-            </li>
-          )
-        })}
-      </ul>
-    )
-  }
 
   render(){
     return(
-      <div className="quickService container">
+      <div className="singleHotel container">
 
         <ul id="worldsDropdown" className="dropdown-content">
           <li>
@@ -98,6 +57,12 @@ class QuickService extends Component {
 
         <ul id="diningDropdown" className="dropdown-content">
           <li>
+            <Link className="center-align" to="/dining/quick-service">
+              Quick Service
+            </Link>
+          </li>
+          <li className="divider"></li>
+          <li>
             <Link className="center-align" to="/dining/table-service">
               Table Service
             </Link>
@@ -108,12 +73,11 @@ class QuickService extends Component {
           <div className="nav-wrapper row #e3f2fd blue lighten-5">
             <ul>
               <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
+                <div className="black-text dropdown-button"
                   data-beloworigin="true"
-                  href="#!"
                   data-activates="worldsDropdown">
                   Worlds
-                </a>
+                </div>
               </li>
 
               <li className="col s4 center-align">
@@ -123,24 +87,19 @@ class QuickService extends Component {
               </li>
 
               <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
+                <div className="black-text dropdown-button"
                   data-beloworigin="true"
-                  href="#!"
                   data-activates="diningDropdown">
                   Dining
-                </a>
+                </div>
               </li>
             </ul>
           </div>
         </nav>
-
-        <section>
-          {this.state.restaurants.length > 1 && this.displayState()}
-        </section>
 
       </div>
     )
   }
 }
 
-export default QuickService;
+export default SingleHotel
