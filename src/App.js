@@ -6,7 +6,8 @@ import {
   } from 'react-router-dom';
 import logo from './logo.gif';
 import base from './rebase';
-import Home from './home';
+import NavBar from './navBar';
+import MagicKingdom from './magic-kingdom';
 import SpecificWorld from './world';
 import Hotels from './hotels';
 import SingleHotel from './single-hotel';
@@ -77,18 +78,21 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header #90caf9 blue lighten-3">
-            <Link to="/">
+            <Link to="/magic-kingdom">
               <h1>Open Booked Disney</h1>
             </Link>
-            <img src={logo} className="App-logo" alt="logo" />
             <div className="login">
               {this.loginOrLogoutButton()}
             </div>
           </header>
+
+          <div className="navBar">
+            <NavBar/>
+          </div>
           <div className="body">
 
-            <Route exact path="/" render={(defaultProps) =>
-              <Home {...defaultProps}/> }
+            <Route exact path="/magic-kingdom" render={(defaultProps) =>
+              <MagicKingdom {...defaultProps}/> }
             />
 
             <Route path="/world/:World?" render={(defaultProps) =>
@@ -119,7 +123,7 @@ class App extends Component {
               <TableService {...defaultProps}/> }
             />
 
-            <Route path="/dining/restaurant/:permalink?" render={(defaultProps) =>
+            <Route path="/:locationLink?/:diningLink?/restaurant/:permalink?" render={(defaultProps) =>
               <SingleRestaurant {...defaultProps}/> }
             />
 

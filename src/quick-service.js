@@ -23,7 +23,11 @@ class QuickService extends Component {
           return elm["place"] === restaurant["name"];
         });
         if(restaurantMatch){
+          restaurant["description"] = restaurantMatch["description"]
+          restaurant["diningLink"] = restaurantMatch["diningLink"]
           restaurant["image"] = restaurantMatch["image"]
+          restaurant["locationLink"] = restaurantMatch["locationLink"]
+          restaurant["menus"] = restaurantMatch["menus"]
           restaurant["price"] = restaurantMatch["price"]
           restaurant["type"] = restaurantMatch["type"]
           restaurant["world"] = restaurantMatch["world"]
@@ -40,7 +44,7 @@ class QuickService extends Component {
           return (
             <li className="card-panel image-container col s4 center-align">
 
-              <Link to={`/dining/restaurant/${restaurant.permalink}`}>
+              <Link to={`/${restaurant.locationLink}/${restaurant.diningLink}/restaurant/${restaurant.permalink}`}>
                 <img className="responsive-img" src={`${restaurant.image}`}/>
                 <div><b>{restaurant.name}</b></div>
                 <div>Location: {restaurant.world}</div>
@@ -57,82 +61,6 @@ class QuickService extends Component {
   render(){
     return(
       <div className="quickService container">
-
-        <ul id="worldsDropdown" className="dropdown-content">
-          <li>
-            <Link to='/world/Main-Street-USA'>
-              Main Street, USA
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Adventureland'>
-              Adventureland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Frontierland'>
-              Frontierland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Liberty-Square'>
-              Liberty Square
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Fantasyland'>
-              Fantasyland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Tomorrowland'>
-              Tomorrowland
-            </Link>
-          </li>
-        </ul>
-
-        <ul id="diningDropdown" className="dropdown-content">
-          <li>
-            <Link className="center-align" to="/dining/table-service">
-              Table Service
-            </Link>
-          </li>
-        </ul>
-
-        <nav>
-          <div className="nav-wrapper row #e3f2fd blue lighten-5">
-            <ul>
-              <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
-                  data-beloworigin="true"
-                  href="#!"
-                  data-activates="worldsDropdown">
-                  Worlds
-                </a>
-              </li>
-
-              <li className="col s4 center-align">
-                <Link className="black-text" to="/attractions">
-                  Attractions
-                </Link>
-              </li>
-
-              <li className="col s4 center-align">
-                <a className="black-text dropdown-button"
-                  data-beloworigin="true"
-                  href="#!"
-                  data-activates="diningDropdown">
-                  Dining
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
 
         <section>
           {this.state.restaurants.length > 1 && this.displayState()}

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 var $ = window.jQuery = require('jquery');
 
-class Home extends Component {
+class MagicKingdom extends Component {
 
   componentDidMount(){
     window.$ = window.jQuery;
@@ -14,40 +14,6 @@ class Home extends Component {
   render(){
     return(
       <div className="homePage container">
-
-        <ul id="diningDropdown" className="dropdown-content">
-          <li>
-            <Link className="center-align" to="/dining/quick-service">
-              Quick Service
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link className="center-align" to="/dining/table-service">
-              Table Service
-            </Link>
-          </li>
-        </ul>
-
-        <nav>
-          <div className="nav-wrapper row #e3f2fd blue lighten-5">
-            <ul>
-              <li className="col s6 center-align">
-                <Link className="black-text" to="/attractions">
-                  Attractions
-                </Link>
-              </li>
-              <li className="col s6 center-align">
-                <div className="black-text dropdown-button"
-                  data-beloworigin="true"
-                  data-activates="diningDropdown">
-                  Dining
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
 
         <section className="worlds row">
             <div className="world-logos valign-wrapper image-container col s4">
@@ -86,4 +52,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default MagicKingdom;

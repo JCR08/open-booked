@@ -2,7 +2,10 @@
   {
     "place": "Be Our Guest Restaurant",
     "description": "Step inside the Beast's enchanted castle for a delicious quick-service breakfast or lunch or a delightful sit-down dinner.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/be-our-guest-restaurant/be-our-guest-restaurant-00.jpg?11022013095431",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": "adult-breakfast"},
       {"meal": "Kids Breakfast", "url": "kids-breakfast"},
@@ -20,7 +23,10 @@
   {
     "place": "Casey's Corner",
     "description": "Hit it out of the park with American baseball favorites. You may even catch Jim tickling the ivories to ragtime tunes outside.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/caseys-corner/caseys-corner-00.jpg?12022013071707",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -38,7 +44,10 @@
   {
     "place": "Cinderella's Royal Table",
     "description": "Dine with Disney Princesses inside Cinderella Castle during this one-of-a-kind Fairytale Dining experience.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/cinderellas-royal-table/cinderella-royal-table-07.jpg?23062015061150",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": "fairytale-dining-breakfast-menu"},
       {"meal": "Kids Breakfast", "url": "fairytale-dining-kids-menu-breakfast"},
@@ -56,7 +65,10 @@
   {
     "place": "Columbia Harbour House",
     "description": "The Columbia Harbour House is a spacious counter service restaurant featuring seafood. If it seems a bit crowded or if you just want a different vantage point, there's additional seating upstairs.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/columbia-harbour-house/columbia-harbour-house-gallery02.jpg?30122013120337",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -74,7 +86,10 @@
   {
     "place": "Cosmic Ray's Starlight Cafe",
     "description": "Explore a galaxy of hot food choices, from BBQ pork sandwiches and chicken breast nuggests to Angus burgers and hot dogs. Customize your meal at the topping bar before finding a seat and enjoying the alien entertainment from Sonny Eclipse.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/cosmic-ray-starlight-cafe/cosmic-ray-starlight-cafe-gallery01.jpg?03032014134829",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -92,7 +107,10 @@
   {
     "place": "The Crystal Palace",
     "description": "Feast with friends from the Hundred-Acre-Wood at this whimsical, all-you-care-to-enjoy buffet.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/the-crystal-palace/crystal-palace-gallery09.jpg?30122013120451",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": "breakfast-buffet"},
       {"meal": "Kids Breakfast", "url": ""},
@@ -110,7 +128,10 @@
   {
     "place": "The Diamond Horseshoe",
     "description": "Mosey inside this Old West music hall for an all-you-care-to-enjoy meal - featuring Frontier favorites your whole posse will love!",
+    "diningLink": "dining",
     "image": "https://media-cdn.tripadvisor.com/media/photo-s/03/3d/3e/1b/the-diamond-horseshoe.jpg",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -128,7 +149,10 @@
   {
     "place": "The Friar's Nook",
     "description": "Tuck into the Friar's for some tasty fare, including macaroni & cheese, hot dogs, and veggies and chips with hummus, as well as beverages like lemonade slush and iced coffee.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/friars-nook/friars-nook-gallery02.jpg?25112015104303",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -146,7 +170,10 @@
   {
     "place": "Golden Oak Outpost",
     "description": "Rustle up some vittles on the go at this Old West-style brick building, including hot and crispy chicken breast nuggets and French fries, plus cookies, hot drinks - and ice-cold soft drinks in a Country Bear Jug!",
+    "diningLink": "dining",
     "image": "http://madaboutthemouse.net/wp-content/uploads/2014/06/golden-oak-outpost-00.jpg",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -164,7 +191,10 @@
   {
     "place": "Jungle Navigation Co. Ltd. Skipper Canteen",
     "description": "Hungry for adventure? Savor the tropical cuisine of this exotic outpost.",
+    "diningLink": "dining",
     "image": "https://www.disboards.com/media/skipper-canteen07.79124/full",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -182,7 +212,10 @@
   {
     "place": "Liberty Tree Tavern",
     "description": "Pay tribute to our founding fathers as you dine at this stately colonial-style inn serving traditional New England-inspired fare.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/liberty-tree-tavern/liberty-tree-tavern-gallery02.jpg?26032014111408",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -200,7 +233,10 @@
   {
     "place": "The Lunching Pad",
     "description": "Ready for blast off? Fuel up with out-of-this-world specialties including ham-and-cheese stuffed or salted pretzels, hot dogs, chips and more. Top it off with frozen carbonated beverages, juice, milk or water - hot tea and coffee are also available.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/the-lunching-pad/lunching-pad-00.jpg?11022013102721",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -218,7 +254,10 @@
   {
     "place": "Main Street Bakery",
     "description": "Make a stop on the way down Main Street and top off your day with a tasty cup or even a mouthwatering treat—including a selection of STARBUCKS® Coffee and specialty beverages, along with Disney baked goods and La Boulange™ pastry items.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/main-street-bakery/main-street-bakery-updated-00.jpg?15102013110900",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -236,7 +275,10 @@
   {
     "place": "Pecos Bill Tall Tale Inn and Cafe",
     "description": "Rustle up some grub at this Old West saloon! Tell tall tales over chicken fajitas, beef burritos and the pepper jack-topped Southwest Burger—all before riding off into the sunset to the taste of sweet treats like mini churros with dipping chocolate.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/pecos-bill-tall-tale-inn-and-cafe/pecos-bill-tall-tale-inn-and-cafe-gallery03.jpg?17022016085526",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -254,7 +296,10 @@
   {
     "place": "Pinocchio Village Haus",
     "description": "Real boys and girls can feast on Italian favorites at this quaint cottage, from the chicken parmesan sandwich and flatbread pizzas to pasta dishes, salads and more. To top off your meal, take a trip to Pleasure Island with a serving of tiramisu gelato.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/pinnocchio-village-haus/pinocchio-village-haus-00.jpg?11022013104432",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -272,7 +317,10 @@
   {
     "place": "The Plaza Restaurant",
     "description": "This hidden gem at Magic Kingdom park is a favorite for its fantastic family-friendly fare and accessible location.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/plaza-restaurant/plaza-restaurant-00.jpg?11022013112946",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -290,7 +338,10 @@
   {
     "place": "Tomorrowland Terrace Restaurant",
     "description": "There’s great food in your future—whether you envision a hearty Angus bacon cheeseburger or a healthful chicken Caesar salad. Kids can enjoy peanut butter and jelly, chicken strips or macaroni and cheese. And our delicious drink and dessert choices are ahead of their time!",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/magic-kingdom/tomorrowland-terrace-restaurant/tomorrowland-terrace-restaurant-gallery06.jpg?09062016092316",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -308,7 +359,10 @@
   {
     "place": "Tony's Town Square Restaurant",
     "description": "Everyone loves Italian, but this is no ordinary Italian restaurant! It’s where Lady and the Tramp had their first kiss.",
+    "diningLink": "dining",
     "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/magic-kingdom/tonys-town-square/tonys-town-square-restaurant-00.jpg?16072013124612",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},
@@ -326,7 +380,10 @@
   {
     "place": "Tortuga Tavern",
     "description": "Avast! Sink yer teeth—whether gold or pearly whites—into tasty pirate fare, fit for both scallywags and scoundrels alike.",
+    "diningLink": "dining",
     "image": "https://media-cdn.tripadvisor.com/media/photo-s/03/3d/3a/c5/tortuga-tavern.jpg",
+    "location": "Magic Kingdom",
+    "locationLink": "magic-kingdom",
     "menus": [
       {"meal": "Breakfast", "url": ""},
       {"meal": "Kids Breakfast", "url": ""},

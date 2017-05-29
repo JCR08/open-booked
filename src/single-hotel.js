@@ -4,98 +4,98 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import base from './rebase';
 var $ = window.jQuery = require('jquery');
+var hotels = require('./hotels.json')
 
 class SingleHotel extends Component{
+
+  constructor(){
+    super()
+    this.state={
+      user: {},
+      comments: [],
+      hotel: [{}],
+      restaurants: []
+    }
+  }
 
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/walt-disney-world/hotels/${this.props.match.params.specifichotel}.json`)
+    .then(function(response){
+      var hotelMatch = hotels.find(function(elm){
+        return elm["place"] === response.data["name"];
+      });
+      let hotel = response.data
+      if(hotelMatch){
+        hotel["description"] = hotelMatch["description"]
+        hotel["image"] = hotelMatch["image"]
+      }
+      return hotel
+    })
+    .then(response => this.setState({hotel: response}))
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+        base.syncState(`/restaurant/${this.props.match.params.permalink}/comments`, {
+          context: this,
+          state: "comments",
+          asArray: true
+        })
+      } else {
+        this.setState({
+          user: {},
+          comments: {}
+        })
+      }
+    })
+  }
+
+  componentWillReceiveProps(newProps){
+    window.$ = window.jQuery;
+    $(".dropdown-button").dropdown( { hover: true } );
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/walt-disney-world/hotels/${newProps.match.params.specifichotel}.json`)
+    .then(function(response){
+      var hotelMatch = hotels.find(function(elm){
+        return elm["place"] === response.data["name"];
+      });
+      let hotel = response.data
+      if(hotelMatch){
+        hotel["description"] = hotelMatch["description"]
+        hotel["image"] = hotelMatch["image"]
+      }
+      return hotel
+    })
+    .then(response => this.setState({hotel: response}))
+  }
+
+  displayState(){
+    const hotel = this.state.hotel;
+    return(
+      <div className="card row">
+        <div className="HotelImage col s6 center-align">
+          <img className="responsive-img" src={`${hotel.image}`} alt="#"/>
+        </div>
+        <div className="restaurantInfo col s6 center-align">
+          <h4><u>{hotel.name}</u></h4>
+          <p>Price Range: {hotel.cost_range} per night</p>
+          <p>{hotel.description}</p>
+        </div>
+      </div>
+    )
   }
 
 
   render(){
+    console.log(this.state.hotel);
     return(
       <div className="singleHotel container">
 
-        <ul id="worldsDropdown" className="dropdown-content">
-          <li>
-            <Link to='/world/Main-Street-USA'>
-              Main Street, USA
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Adventureland'>
-              Adventureland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Frontierland'>
-              Frontierland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Liberty-Square'>
-              Liberty Square
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Fantasyland'>
-              Fantasyland
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link to='/world/Tomorrowland'>
-              Tomorrowland
-            </Link>
-          </li>
-        </ul>
-
-        <ul id="diningDropdown" className="dropdown-content">
-          <li>
-            <Link className="center-align" to="/dining/quick-service">
-              Quick Service
-            </Link>
-          </li>
-          <li className="divider"></li>
-          <li>
-            <Link className="center-align" to="/dining/table-service">
-              Table Service
-            </Link>
-          </li>
-        </ul>
-
-        <nav>
-          <div className="nav-wrapper row #e3f2fd blue lighten-5">
-            <ul>
-              <li className="col s4 center-align">
-                <div className="black-text dropdown-button"
-                  data-beloworigin="true"
-                  data-activates="worldsDropdown">
-                  Worlds
-                </div>
-              </li>
-
-              <li className="col s4 center-align">
-                <Link className="black-text" to="/attractions">
-                  Attractions
-                </Link>
-              </li>
-
-              <li className="col s4 center-align">
-                <div className="black-text dropdown-button"
-                  data-beloworigin="true"
-                  data-activates="diningDropdown">
-                  Dining
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <section className="info">
+          {this.state.hotel.name && this.displayState()}
+        </section>
 
       </div>
     )
