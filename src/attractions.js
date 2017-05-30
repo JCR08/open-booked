@@ -36,7 +36,6 @@ class Attractions extends Component {
   }
 
   displayState(){
-
     return (
       <ul className="row">
         {this.state.attractions.map(attraction => {

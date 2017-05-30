@@ -105,7 +105,7 @@ class SingleRestaurant extends Component{
   }
 
   setMenuState(menu){
-    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/dining/${this.props.match.params.permalink}/menus/${menu.url}.json`)
+    axios.get(`https://tiy-orl-proxy.herokuapp.com/disney/${this.props.match.params.locationLink}/dining/${this.props.match.params.permalink}/menus/${menu.url}.json`)
       .then(response => this.setState({ menu: response.data[2].menu_links }))
   }
 
