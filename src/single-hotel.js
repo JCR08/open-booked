@@ -15,7 +15,8 @@ class SingleHotel extends Component{
       user: {},
       comments: [],
       hotel: [{}],
-      restaurants: []
+      quickService: [],
+      tableService: []
     }
   }
 
@@ -72,8 +73,10 @@ class SingleHotel extends Component{
         }
         return restaurant
       })
-      let hotelRestaurants = restaurantMatch.filter(object => object.description)
-      this.setState({restaurants: hotelRestaurants})
+      let quick = restaurantMatch.filter(object => object.description).filter(object => object.type === "Quick Service")
+      this.setState({quickService: quick})
+      let table = restaurantMatch.filter(object => object.description).filter(object => object.type === "Table Service")
+      this.setState({tableService: table})
     })
   }
 
@@ -115,8 +118,10 @@ class SingleHotel extends Component{
         }
         return restaurant
       })
-      let hotelRestaurants = restaurantMatch.filter(object => object.description)
-      this.setState({restaurants: hotelRestaurants})
+      let quick = restaurantMatch.filter(object => object.description).filter(object => object.type === "Quick Service")
+      this.setState({quickService: quick})
+      let table = restaurantMatch.filter(object => object.description).filter(object => object.type === "Table Service")
+      this.setState({tableService: table})
     })
   }
 
@@ -137,13 +142,13 @@ class SingleHotel extends Component{
     )
   }
 
-  displayRestaurants(){
-    console.log(this.state.restaurants)
-    return(
-      <ul className="row">
-        {this.state.restaurants.map(restaurant => {
+  displayQuickService(){
+    return (
+      <ul className="row col s6">
+        <h4 className="center-align">Quick Service Restaurants</h4>
+        {this.state.quickService.map(restaurant => {
           return (
-            <li className="card-panel image-container col s4 center-align">
+            <li className="card-panel image-container col s8 offset-s2 center-align">
 
               <Link to={`/${restaurant.locationLink}/${restaurant.diningLink}/restaurant/${restaurant.permalink}`}>
                 <img className="responsive-img" src={`${restaurant.image}`}/>
@@ -158,8 +163,30 @@ class SingleHotel extends Component{
     )
   }
 
+  displayTableService(){
+    return (
+      <ul className="row col s6">
+        <h4 className="center-align">Table Service Restaurants</h4>
+        {this.state.tableService.map(restaurant => {
+          return (
+            <li className="card-panel image-container col s8 offset-s2 center-align">
+
+              <Link to={`/${restaurant.locationLink}/${restaurant.diningLink}/restaurant/${restaurant.permalink}`}>
+                <img className="responsive-img" src={`${restaurant.image}`}/>
+                <div><b>{restaurant.name}</b></div>
+                <div><em>Price Range: {restaurant.price}</em></div>
+              </Link>
+
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }
 
   render(){
+    console.log(this.state.quickService);
+    console.log(this.state.tableService);
     return(
       <div className="singleHotel container">
 
@@ -167,8 +194,9 @@ class SingleHotel extends Component{
           {this.state.hotel.name && this.displayHotel()}
         </section>
 
-        <section>
-          {this.state.restaurants && this.displayRestaurants()}
+        <section className="row">
+            {this.state.quickService.length > 0 && this.displayQuickService()}
+            {this.state.tableService.length > 0 && this.displayTableService()}
         </section>
 
       </div>

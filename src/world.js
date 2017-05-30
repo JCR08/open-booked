@@ -80,7 +80,11 @@ class SpecificWorld extends Component {
           return elm["place"] === restaurant["name"];
         });
         if(restaurantMatch){
+          restaurant["description"] = restaurantMatch["description"]
+          restaurant["diningLink"] = restaurantMatch["diningLink"]
           restaurant["image"] = restaurantMatch["image"]
+          restaurant["locationLink"] = restaurantMatch["locationLink"]
+          restaurant["menus"] = restaurantMatch["menus"]
           restaurant["price"] = restaurantMatch["price"]
           restaurant["type"] = restaurantMatch["type"]
           restaurant["world"] = restaurantMatch["world"]
@@ -98,7 +102,11 @@ class SpecificWorld extends Component {
           return elm["place"] === restaurant["name"];
         });
         if(restaurantMatch){
+          restaurant["description"] = restaurantMatch["description"]
+          restaurant["diningLink"] = restaurantMatch["diningLink"]
           restaurant["image"] = restaurantMatch["image"]
+          restaurant["locationLink"] = restaurantMatch["locationLink"]
+          restaurant["menus"] = restaurantMatch["menus"]
           restaurant["price"] = restaurantMatch["price"]
           restaurant["type"] = restaurantMatch["type"]
           restaurant["world"] = restaurantMatch["world"]
@@ -117,7 +125,7 @@ class SpecificWorld extends Component {
           return (
             <li className="card-panel image-container col s8 offset-s2 center-align">
 
-              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+              <Link to={`/${restaurant.locationLink}/${restaurant.diningLink}/restaurant/${restaurant.permalink}`}>
                 <img className="responsive-img" src={`${restaurant.image}`}/>
                 <div><b>{restaurant.name}</b></div>
                 <div><em>Price Range: {restaurant.price}</em></div>
@@ -138,7 +146,7 @@ class SpecificWorld extends Component {
           return (
             <li className="card-panel image-container col s8 offset-s2 center-align">
 
-              <Link to={`/dining/quick-service-restaurant/${restaurant.permalink}`}>
+              <Link to={`/${restaurant.locationLink}/${restaurant.diningLink}/restaurant/${restaurant.permalink}`}>
                 <img className="responsive-img" src={`${restaurant.image}`}/>
                 <div><b>{restaurant.name}</b></div>
                 <div><em>Price Range: {restaurant.price}</em></div>
