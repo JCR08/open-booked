@@ -25,8 +25,9 @@ class SingleAttraction extends Component{
     .then(object => this.setState({ attraction: object[0] }))
     base.auth().onAuthStateChanged(user => {
       if(user){
+        console.log(user)
         this.setState({
-          user: user
+          user: user,
         })
         base.syncState(`/attraction/${this.props.match.params.permalink}/comments`, {
           context: this,
@@ -160,7 +161,7 @@ class SingleAttraction extends Component{
   }
 
   render(){
-    console.log(this.state.attraction);
+    // console.log(this.state.user);
     return(
       <div className="singleAtttraction container">
 
