@@ -21,6 +21,27 @@
     "world": ""
   },
   {
+    "place": "Barefoot Pool Bar",
+    "description": "Kick off your shoes and enjoy the white sandy beach as you sip on Tiki drinks and take in views of Magic Kingdom park. Try the Captain’s Mai Tai, Samoa Sunrise or Banana Cabana! Beer, wine and a full bar are also available.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/polynesian-resort/barefoot-pool-bar/barefoot-pool-bar-gallery01.jpg?24022016064300",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": ""},
+      {"meal": "Kids Breakfast", "url": ""},
+      {"meal": "Lunch", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Lunch", "url": "kids-lunch-and-dinner"},
+      {"meal": "Dinner", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Dinner", "url": "kids-lunch-and-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$",
+    "type": "Quick Service",
+    "world": ""
+  },
+  {
     "place": "Be Our Guest Restaurant",
     "description": "Step inside the Beast's enchanted castle for a delicious quick-service breakfast or lunch or a delightful sit-down dinner.",
     "diningLink": "dining",
@@ -81,6 +102,27 @@
     ],
     "price": "$$$",
     "type": "Table Service",
+    "world": ""
+  },
+  {
+    "place": "Capt. Cook's",
+    "description": "Explore your options each morning as you start the day with a Mickey Waffle or banana-stuffed Tonga Toast. For lunch or dinner, discover an adventurous assortment of sandwiches, salads, flatbreads and more. Beer and wine are also available.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/polynesian-resort/captain-cook/captain-cook-gallery08.jpg?16122015162233",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": "breakfast-menu"},
+      {"meal": "Kids Breakfast", "url": "kids-breakfast"},
+      {"meal": "Lunch", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Lunch", "url": "kids-lunch-and-dinner"},
+      {"meal": "Dinner", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Dinner", "url": "kids-lunch-and-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$",
+    "type": "Quick Service",
     "world": ""
   },
   {
@@ -189,6 +231,27 @@
     "world": "Liberty Square"
   },
   {
+    "place": "Contempo Cafe",
+    "description": "Take time out for a tasty, casual breakfast, lunch or dinner! Stave hunger with hot frittatas, eggs, French toast, bakery items, fresh fruits, salads, sandwiches, flatbreads, pasta entrées and more—grab ’n’ go food is also available.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/contemporary-resort/contempo-cafe/contempo-cafe-gallery00.jpg?30122013113009",
+    "location": "Disney's Contemporary Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": "breakfast-menu"},
+      {"meal": "Kids Breakfast", "url": "kids-breakfast"},
+      {"meal": "Lunch", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Lunch", "url": "kids-lunch-dinner"},
+      {"meal": "Dinner", "url": "lunch-and-dinner-menu"},
+      {"meal": "Kids Dinner", "url": "kids-lunch-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$",
+    "type": "Quick Service",
+    "world": ""
+  },
+  {
     "place": "Cosmic Ray's Starlight Cafe",
     "description": "Explore a galaxy of hot food choices, from BBQ pork sandwiches and chicken breast nuggests to Angus burgers and hot dogs. Customize your meal at the topping bar before finding a seat and enjoying the alien entertainment from Sonny Eclipse.",
     "diningLink": "dining",
@@ -271,6 +334,27 @@
     "price": "$$$",
     "type": "Table Service",
     "world": "Liberty Square"
+  },
+  {
+    "place": "Disney's Spirit of Aloha Dinner Show",
+    "description": "Enjoy an enchanting luau with Polynesian dancing and an all-you-care-to-enjoy, family-style feast.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/resort-dining/polynesian-resort/disney-spirit-of-aloha-dinner-show/disney-spirit-of-aloha-dinner-show-00.jpg?25052012062558",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": ""},
+      {"meal": "Kids Breakfast", "url": ""},
+      {"meal": "Lunch", "url": ""},
+      {"meal": "Kids Lunch", "url": ""},
+      {"meal": "Dinner", "url": "dinner-menu"},
+      {"meal": "Kids Dinner", "url": ""},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$$$$",
+    "type": "Table Service",
+    "world": ""
   },
   {
     "place": "The Friar's Nook",
@@ -399,6 +483,27 @@
     "world": "Adventureland"
   },
   {
+    "place": "Kona Cafe",
+    "description": "This relaxed café infuses a bit of Asian zest into traditional American meals and features an onstage sushi kitchen.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/polynesian-resort/kona-cafe/kona-cafe-gallery00.jpg?25022016092555",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": "breakfast-menu"},
+      {"meal": "Kids Breakfast", "url": "kids-menu-breakfast"},
+      {"meal": "Lunch", "url": "lunch-menu"},
+      {"meal": "Kids Lunch", "url": "kids-menu-lunch-and-dinner"},
+      {"meal": "Dinner", "url": "dinner-menu"},
+      {"meal": "Kids Dinner", "url": "kids-menu-lunch-and-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": "dessert-menu"}
+    ],
+    "price": "$-$$",
+    "type": "Table Service",
+    "world": ""
+  },
+  {
     "place": "Liberty Tree Tavern",
     "description": "Pay tribute to our founding fathers as you dine at this stately colonial-style inn serving traditional New England-inspired fare.",
     "diningLink": "dining",
@@ -504,6 +609,48 @@
     "world": ""
   },
   {
+    "place": "Oasis Bar and Grill",
+    "description": "Take a break from the sun and imbibe on some fun at this poolside retreat—featuring tasty favorites like fish tacos, kalua pork sliders and Polynesian-themed burgers, along with tropical cocktails, wine, Hawaiian beer and assorted beverages.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/polynesian-resort/oasis-bar-grill/oasis-bar-grill-00.jpg?16032016115752",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": ""},
+      {"meal": "Kids Breakfast", "url": ""},
+      {"meal": "Lunch", "url": "lunchdinner-menu"},
+      {"meal": "Kids Lunch", "url": "kids-lunchdinner-menu"},
+      {"meal": "Dinner", "url": "lunchdinner-menu"},
+      {"meal": "Kids Dinner", "url": "kids-lunchdinner-menu"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$",
+    "type": "Quick Service",
+    "world": ""
+  },
+  {
+    "place": "'Ohana",
+    "description": "Hang loose with Stitch and friends at breakfast and enjoy games, storytelling and a Hawaiian-style feast at dinner.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/90/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/polynesian-resort/ohana/ohana-gallery08.jpg?21052014110506",
+    "location": "Disney's Polynesian Village Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": "best-friends-breakfast"},
+      {"meal": "Kids Breakfast", "url": ""},
+      {"meal": "Lunch", "url": ""},
+      {"meal": "Kids Lunch", "url": ""},
+      {"meal": "Dinner", "url": "dinner-menu"},
+      {"meal": "Kids Dinner", "url": ""},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$$-$$$",
+    "type": "Table Service",
+    "world": ""
+  },
+  {
     "place": "Pecos Bill Tall Tale Inn and Cafe",
     "description": "Rustle up some grub at this Old West saloon! Tell tall tales over chicken fajitas, beef burritos and the pepper jack-topped Southwest Burger—all before riding off into the sunset to the taste of sweet treats like mini churros with dipping chocolate.",
     "diningLink": "dining",
@@ -565,6 +712,27 @@
     "price": "$$",
     "type": "Table Service",
     "world": "Main Street USA"
+  },
+  {
+    "place": "The Sand Bar",
+    "description": "Picnic poolside with burgers, hot dogs and more. Tropical cocktails, draft beer, sangria and wine make it even more fun! Or cool off with a full bar menu and some AC inside the enclosed bar. Dessert items are also available. ",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/things-to-do/dining/resort-dining/contemporary-resort/sand-bar-and-grill/sand-bar-00.jpg?26092012124242",
+    "location": "Disney's Contemporary Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": ""},
+      {"meal": "Kids Breakfast", "url": ""},
+      {"meal": "Lunch", "url": "lunch-dinner"},
+      {"meal": "Kids Lunch", "url": "kids-lunch-dinner"},
+      {"meal": "Dinner", "url": "lunch-dinner"},
+      {"meal": "Kids Dinner", "url": "kids-lunch-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": ""}
+    ],
+    "price": "$",
+    "type": "Quick Service",
+    "world": ""
   },
   {
     "place": "Tomorrowland Terrace Restaurant",
@@ -647,6 +815,27 @@
       {"meal": "Dessert", "url": ""}
     ],
     "price": "$$$$",
+    "type": "Table Service",
+    "world": ""
+  },
+  {
+    "place": "The Wave... of American Flavors",
+    "description": "Delight in fresh American cuisine at this stylishly contemporary restaurant and lounge.",
+    "diningLink": "dining",
+    "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/640/360/75/wdpromedia.disney.go.com/media/wdpro-assets/gallery/dining/resort-dining/contemporary-resort/wave-restaurant-of-american-flavors/wave-restaurant-of-american-flavors-gallery00.jpg?30122013113025",
+    "location": "Disney's Contemporary Resort",
+    "locationLink": "walt-disney-world",
+    "menus": [
+      {"meal": "Breakfast", "url": "breakfast-menu"},
+      {"meal": "Kids Breakfast", "url": "kids-menu-breakfast"},
+      {"meal": "Lunch", "url": "lunch-menu"},
+      {"meal": "Kids Lunch", "url": "kids-lunch-dinner"},
+      {"meal": "Dinner", "url": "dinner"},
+      {"meal": "Kids Dinner", "url": "kids-lunch-dinner"},
+      {"meal": "General Menu", "url": ""},
+      {"meal": "Dessert", "url": "dessert-menu"}
+    ],
+    "price": "$-$$",
     "type": "Table Service",
     "world": ""
   }
