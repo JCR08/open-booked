@@ -21,14 +21,14 @@ class SingleAttraction extends Component{
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
     axios.get('https://intense-harbor-66125.herokuapp.com')
-    .then(response => response.data.filter(data => data.id.includes(`${this.props.match.params.id}`) == true))
+    .then(response => response.data.filter(data => data.permalink === this.props.match.params.permalink))
     .then(object => this.setState({ attraction: object[0] }))
     base.auth().onAuthStateChanged(user => {
       if(user){
         this.setState({
           user: user
         })
-        base.syncState(`/attraction/${this.props.match.params.id}/comments`, {
+        base.syncState(`/attraction/${this.props.match.params.permalink}/comments`, {
           context: this,
           state: "comments",
           asArray: true
@@ -88,12 +88,12 @@ class SingleAttraction extends Component{
 
   submitComment(event){
     event.preventDefault();
-    console.log(this.state.user);
+    // console.log(this.state.user);
     const comment = this.comment.value;
     const userName = this.state.user.displayName
     const userAvatar = this.state.user.photoURL
     const attraction = this.state.attraction.name
-    let newComment = base.push(`/attraction/${this.props.match.params.id}/comments`, {
+    let newComment = base.push(`/attraction/${this.props.match.params.permalink}/comments`, {
       data: {
         comment,
         attraction,

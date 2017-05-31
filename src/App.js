@@ -121,7 +121,7 @@ class App extends Component {
               <SingleHotel {...defaultProps}/> }
             />
 
-            <Route path="/attraction/:id?" render={(defaultProps) =>
+            <Route path="/attraction/:permalink?" render={(defaultProps) =>
               <SingleAttraction {...defaultProps}/> }
             />
 

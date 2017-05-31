@@ -167,7 +167,7 @@ class SpecificWorld extends Component {
           return (
             <li className="card-panel image-container col s4 center-align">
 
-              <Link to={`/attraction/${attraction.id}`}>
+              <Link to={`/attraction/${attraction.permalink}`}>
                 <img className="responsive-img" src={`${attraction.image}`}/>
                 <div><b>{attraction.name}</b></div>
                 <div>{this.waitTime(attraction)}</div>

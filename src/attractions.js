@@ -16,8 +16,8 @@ class Attractions extends Component {
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
-    axios.get('https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/attractions.json')
-      .then(response => console.log(response.data))
+    // axios.get('https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/attractions.json')
+    //   .then(response => console.log(response.data))
     axios.get('https://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
@@ -43,7 +43,7 @@ class Attractions extends Component {
           return (
             <li className="card-panel image-container col s4 center-align">
 
-              <Link to={`/attraction/${attraction.id}`}>
+              <Link to={`/attraction/${attraction.permalink}`}>
                 <img className="responsive-img" src={`${attraction.image}`}/>
                 <div><b>{attraction.name}</b></div>
                 <div>Location: {attraction.world}</div>
@@ -72,6 +72,7 @@ class Attractions extends Component {
   }
 
   render(){
+    console.log(this.state.attractions)
     return(
       <div className="allAttractions container">
 
