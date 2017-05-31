@@ -16,6 +16,8 @@ class Attractions extends Component {
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
+    axios.get('https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/attractions.json')
+      .then(response => console.log(response.data))
     axios.get('https://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
@@ -31,7 +33,6 @@ class Attractions extends Component {
       .then(array => array.filter(object => object.name.includes('Christmas') !== true))
       .then(array => array.filter(object => object.name.includes('Pirate and Princess') !== true))
       .then(array => array.filter(object => object.name.includes('Pirates at Walt Disney World') !== true))
-      //.then(array => console.log(array))
       .then(array => this.setState({ attractions: array }))
   }
 
@@ -57,7 +58,7 @@ class Attractions extends Component {
   }
 
   waitTime(attraction){
-    if(attraction.type ==="ride"){
+    if(attraction.waitTime > 0){
       if(attraction.status === "Operating"){
         return (
            <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>

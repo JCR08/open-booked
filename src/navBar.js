@@ -93,7 +93,7 @@ class NavBar extends Component {
                 <div className="black-text dropdown-button"
                   data-beloworigin="true"
                   data-activates="worldsDropdown">
-                  Worlds
+                  Magic Kingdom
                 </div>
               </li>
 

@@ -7,7 +7,9 @@ import {
 import logo from './logo.gif';
 import base from './rebase';
 import NavBar from './navBar';
+import Home from './home';
 import MagicKingdom from './magic-kingdom';
+import Dining from './dining';
 import SpecificWorld from './world';
 import Hotels from './hotels';
 import SingleHotel from './single-hotel';
@@ -78,7 +80,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header #90caf9 blue lighten-3">
-            <Link to="/magic-kingdom">
+            <Link to="/">
               <h1>Open Booked Disney</h1>
             </Link>
             <div className="login">
@@ -91,8 +93,16 @@ class App extends Component {
           </div>
           <div className="body">
 
+            <Route exact path="/" render={(defaultProps) =>
+              <Home {...defaultProps}/> }
+            />
+
             <Route exact path="/magic-kingdom" render={(defaultProps) =>
               <MagicKingdom {...defaultProps}/> }
+            />
+
+            <Route exact path="/dining" render={(defaultProps) =>
+              <Dining {...defaultProps}/> }
             />
 
             <Route path="/world/:World?" render={(defaultProps) =>

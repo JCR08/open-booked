@@ -61,7 +61,7 @@ class SingleAttraction extends Component{
   }
 
   waitTime(attraction){
-    if(attraction.type ==="ride"){
+    if(attraction.waitTime > 0){
       if(attraction.status === "Operating"){
         return (
            <div>Wait Time: <em>{attraction.waitTime} minutes</em></div>
@@ -160,7 +160,7 @@ class SingleAttraction extends Component{
   }
 
   render(){
-    console.log(this.state.comments);
+    console.log(this.state.attraction);
     return(
       <div className="singleAtttraction container">
 

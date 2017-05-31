@@ -1,0 +1,202 @@
+[
+  {
+  "ride": "Captain Jack Sparrow's Pirate Tutorial",
+  "permalink": "captain-jack-sparrows-pirate-tutorial",
+  "lat":   ,
+  "lon":   ,
+  "world": "Adventureland",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/captain-jack-sparrow-pirate-tutorial/captain-jack-sparrow-pirate-tutorial-00.jpg?25052012070016",
+  "description": "Discover the not-so-gentle art of being a pirate in this high-spirited school of skullduggery and sword fighting."
+  },
+  {
+  "ride": "Casey's Corner Pianist",
+  "permalink": "caseys-corner-pianist",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/caseys-corner-pianist/caseys-corner-pianist-00.jpg?06082013111845",
+  "description": "This playful pianist bedazzles you with his impressive repertoire. Go ahead—make a request!"
+  },
+  {
+  "ride": "Dapper Dans",
+  "permalink": "dapper-dans",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/dapper-dans/dapper-dans-00.jpg?23042014091227",
+  "description": "This barbershop quartet spins harmonies as they play the chimes, tap dance and regale audiences with vaudeville humor. "
+  },
+  {
+  "ride": "Disney Festival of Fantasy Parade",
+  "permalink": "festival-fantasy-parade",
+  "lat":   ,
+  "lon":   ,
+  "world": "",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/festival-fantasy-parade/festival-fantasy-parade-05.jpg?18032014142149",
+  "description": "Celebrate the spirit of Disney as Magic Kingdom park comes alive with music and dance during a tribute to the tales of Fantasyland."
+  },
+  {
+  "ride": "Flag Retreat",
+  "permalink": "flag-retreat",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/flag-retreat/flag-retreat-00.jpg?29052012071153",
+  "description": "Put your hand over your heart, follow the Pledge of Allegiance and hear patriotic songs as the flag is lowered and folded."
+  },
+  {
+  "ride": "Happily Ever After",
+  "permalink": "happily-ever-after",
+  "lat":   ,
+  "lon":   ,
+  "world": "",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/happily-ever-after-fireworks/happily-ever-after-fireworks-03.jpg?20022017073534",
+  "description": "Experience the grandest of finales to your Disney day—with the newest, most spectacular fireworks show in the history of Magic Kingdom park, opening in late spring 2017!"
+  },
+  {
+  "ride": "Let the Magic Begin",
+  "permalink": "magic-kingdom-welcome-show",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/magic-kingdom-welcome/magic-kingdom-welcome-04.jpg?13012017103905",
+  "description": "Join the opening ceremonies each morning with Mickey and the gang as they welcome you to the most magical place on earth!"
+  },
+  {
+  "ride": "Main Street Philharmonic",
+  "permalink": "main-street-philharmonic",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/main-street-philharmonic/main-street-philharmonic-00.jpg?08082013103256",
+  "description": "Hear this legendary marching band playing tunes from classic Disney films mixed with ragtime and swing."
+  },
+  {
+  "ride": "Main Street Trolley Show",
+  "permalink": "main-street-trolley-parade",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/main-street-trolley/main-street-trolley-00.jpg?23042014135058",
+  "description": "Watch these citizens pour out of a trolley during a lively performance welcoming you to the most magical place on earth! "
+  },
+  {
+  "ride": "Meet Ariel at Her Grotto",
+  "permalink": "ariels-grotto",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-ariel-grotto-fantasyland/character-meet-ariel-grotto-fantasyland-00.jpg?30112012085342",
+  "description": "The Little Mermaid greets friends from land and under the sea in a rocky coastal retreat."
+  },
+  {
+  "ride": "Meet Cinderella & Elena at Princess Fairytale Hall",
+  "permalink": "princess-fairytale-hall-elena-cinderella",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-cinderella-fairytale-hall/character-meet-cinderella-fairytale-hall-00.jpg?03042014121836",
+  "description": "Join Cinderella when she welcomes Elena to the land where \"a dream is a wish your heart makes.\""
+  },
+  {
+  "ride": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+  "permalink": "petes-silly-sideshow-goofy-donald",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-goofy-donald/character-meet-and-greet-goofy-donald-petes-silly-slideshow-00.jpg?03042014122528",
+  "description": "Some favorite Disney friends are waiting to meet you under the Big Top!"
+  },
+  {
+  "ride": "Meet Magnifique Disney Friends as Circus Stars at Pete’s Silly Sideshow",
+  "permalink": "petes-silly-sideshow-minnie-daisy",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-minnie-daisy-donald-goofy/character-meet-and-greet-minnie-daisy-petes-silly-slideshow-00.jpg?03042014142738",
+  "description": "Some favorite Disney friends are waiting to meet you under the Big Top!"
+  },
+  {
+  "ride": "Meet Mickey Mouse at Town Square Theater",
+  "permalink": "town-square-theater-mickey-mouse",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-mickey-mouse-town-square/mickey-mouse-at-town-square-theater-00.jpg?03042014142117",
+  "description": "Go backstage as a special guest of your pal, Mickey."
+  },
+  {
+  "ride": "Meet Rapunzel and Tiana at Princess Fairytale Hall",
+  "permalink": "princess-fairytale-hall-rapunzel-tiana",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-rapunzel-fairytale-hall/character-meet-rapunzel-fairytale-hall-00.jpg?03042014144209",
+  "description": "Jump into adventure and dig a little deeper during an unforgettable greeting with Rapunzel and Princess Tiana."
+  },
+  {
+  "ride": "Meet Tinker Bell at Town Square Theater",
+  "permalink": "town-square-theater-tinker-bell",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "attraction",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/character-experience/magic-kingdom/character-meet-tinker-bell-town-square/character-meet-tinker-bell-town-square-00.jpg?15072014195851",
+  "description": "Fly away to Main Street, U.S.A. where you can come face-to-face with a magical fairy from Pixie Hollow—it’s Tinker Bell!"
+  },
+  {
+  "ride": "Mickey's Royal Friendship Faire",
+  "permalink": "mickeys-royal-friendship-faire",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/mickeys-royal-friendship-faire/mickeys-royal-friendship-faire-04.jpg?21092016121726",
+  "description": "See Mickey and his merry makers perform alongside other popular Disney pals during this magical, musical extravaganza."
+  },
+  {
+  "ride": "Move It! Shake It! Dance & Play It! Street Party",
+  "permalink": "move-it-shake-it-dance-play-it-street-party",
+  "lat":   ,
+  "lon":   ,
+  "world": "Main Street USA",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/move-it-shake-it-dance-play-it-street-party/move-it-shake-it-dance-play-it-00.jpg?22102014161654",
+  "description": "Celebrate with your Disney and Pixar pals at this delightful street jubilee that gets you moving and grooving."
+  },
+  {
+  "ride": "The Muppets Present...Great Moments in American History",
+  "permalink": "muppets-present-great-moments-in-american-history",
+  "lat":   ,
+  "lon":   ,
+  "world": "Liberty Square",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/muppets-present-great-moments-in-american-history/muppets-present-great-moments-in-american-history-00.jpg?16082016082001",
+  "description": "Join Kermit and friends for hysterical, historical sketches and song."
+  },
+  {
+  "ride": "Royal Majesty Makers",
+  "permalink": "royal-majesty-makers",
+  "lat":   ,
+  "lon":   ,
+  "world": "Fantasyland",
+  "type": "show",
+  "image": "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/630/354/75/wdpromedia.disney.go.com/media/wdpro-assets/parks-and-tickets/entertainment/magic-kingdom/royal-majesty-makers/royal-majesty-makers-00.jpg?11112013095505",
+  "description": "Little lords and ladies can acquire the graces of princes and princesses with the help of these trusted royal advisors."
+  },
+]

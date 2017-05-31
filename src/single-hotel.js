@@ -26,6 +26,23 @@ class SingleHotel extends Component{
     let props = this.props
     this.getHotel()
     this.getRestaurants(props)
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+        base.syncState(`/hotel/${this.props.match.params.specifichotel}/comments`, {
+          context: this,
+          state: "comments",
+          asArray: true
+        })
+      } else {
+        this.setState({
+          user: {},
+          comments: {}
+        })
+      }
+    })
   }
 
   componentWillReceiveProps(newProps){
@@ -184,6 +201,77 @@ class SingleHotel extends Component{
     )
   }
 
+  submitComment(event){
+    event.preventDefault();
+    console.log(this.state.user);
+    const comment = this.comment.value;
+    const userName = this.state.user.displayName
+    const userAvatar = this.state.user.photoURL
+    let newComment = base.push(`/world/${this.props.match.params.World}/comments`, {
+      data: {
+        comment,
+        userName,
+        userAvatar
+      }
+    })
+    this.comment.value = '';
+  }
+
+  displayComment(){
+    if(this.state.user.uid){
+      return(
+        <div className="card row">
+          <div className="commentDisplay col s12 center-align">
+            <div>
+              {this.state.comments.map(comment => {
+                return (
+                  <div className="commentCard row center-align valign-wrapper">
+                    <div className="row col s4">
+                      <img src={`${comment.userAvatar}`} alt="" className="commentAvatar col s3 offset-s4 circle"/>
+                      <div className="col s12 center-align">{comment.userName}</div>
+                    </div>
+                    <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          <div className="leaveComment row col s12 center-align">
+            <form className="row"
+              onSubmit={this.submitComment.bind(this)}>
+              <input
+                className="col s8 offset-s1"
+                placeholder='Leave a Comment'
+                ref={element => this.comment = element}
+              />
+              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i className="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      )
+    } else {
+      return(
+        <div className="row">
+          <div className="col s12 center-align">
+            <div onClick={this.login.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Login to view or leave comments</div>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  login (){
+    var authHandler = (error, data) => {
+      this.setState({
+        user: data.user
+      })
+    }
+    base.authWithOAuthPopup('google', authHandler)
+  }
+
   render(){
     console.log(this.state.quickService);
     console.log(this.state.tableService);
@@ -197,6 +285,10 @@ class SingleHotel extends Component{
         <section className="row">
             {this.state.quickService.length > 0 && this.displayQuickService()}
             {this.state.tableService.length > 0 && this.displayTableService()}
+        </section>
+
+        <section>
+          {this.displayComment()}
         </section>
 
       </div>
