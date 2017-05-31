@@ -18,6 +18,7 @@ import SingleAttraction from './single-attraction';
 import QuickService from './quick-service';
 import TableService from './table-service';
 import SingleRestaurant from './single-restaurant';
+import Testing from './testing'
 import './App.css';
 
 class App extends Component {
@@ -135,6 +136,10 @@ class App extends Component {
 
             <Route path="/:locationLink?/:diningLink?/restaurant/:permalink?" render={(defaultProps) =>
               <SingleRestaurant {...defaultProps}/> }
+            />
+
+            <Route path="/testing" render={(defaultProps) =>
+              <Testing {...defaultProps}/> }
             />
 
           </div>

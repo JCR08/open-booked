@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import materializecss from 'materialize-css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+var attractions = require('./attractions.json')
 var $ = window.jQuery = require('jquery');
 
 class Attractions extends Component {
@@ -16,8 +17,9 @@ class Attractions extends Component {
   componentDidMount(){
     window.$ = window.jQuery;
     $(".dropdown-button").dropdown( { hover: true } );
+    let allAttractions = []
     // axios.get('https://tiy-orl-proxy.herokuapp.com/disney/magic-kingdom/attractions.json')
-    //   .then(response => console.log(response.data))
+    //   .then(response => allAttractions.push(response.data))
     axios.get('https://intense-harbor-66125.herokuapp.com')
       .then(response => response.data.sort(function(a,b){
         var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
