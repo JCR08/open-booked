@@ -120,7 +120,7 @@ class SpecificWorld extends Component {
   displayQuickService(){
     return (
       <ul className="row col s6">
-        <h4 className="center-align">Quick Service Restaurants</h4>
+        <h5 className="center-align">Quick Service Restaurants</h5>
         {this.state.quickService.map(restaurant => {
           return (
             <li className="card-panel image-container col s8 offset-s2 center-align">
@@ -141,7 +141,7 @@ class SpecificWorld extends Component {
   displayTableService(){
     return (
       <ul className="row col s6">
-        <h4 className="center-align">Table Service Restaurants</h4>
+        <h5 className="center-align">Table Service Restaurants</h5>
         {this.state.tableService.map(restaurant => {
           return (
             <li className="card-panel image-container col s8 offset-s2 center-align">
@@ -162,7 +162,7 @@ class SpecificWorld extends Component {
   displayAttractions(){
     return (
       <ul className="row">
-        <h4 className="center-align">Attractions</h4>
+        <h5 className="center-align">Attractions</h5>
         {this.state.attractions.map(attraction => {
           return (
             <li className="card-panel image-container col s4 center-align">
@@ -268,7 +268,7 @@ class SpecificWorld extends Component {
   render(){
     return(
       <div className="specificWorld container">
-
+        <h4 className="center-align">{this.props.match.params.World.split('-').join(' ')}</h4>
         <section>
           {this.state.attractions.length > 1 && this.displayAttractions()}
           <div className="row">

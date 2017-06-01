@@ -61,7 +61,7 @@ class QuickService extends Component {
   render(){
     return(
       <div className="quickService container">
-
+        <h4 className="center-align">Quick Service Restaurants</h4>
         <section>
           {this.state.restaurants.length > 1 && this.displayState()}
         </section>

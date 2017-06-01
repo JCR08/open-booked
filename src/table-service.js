@@ -60,7 +60,7 @@ class TableService extends Component {
   render(){
     return(
       <div className="tableService container">
-
+        <h4 className="center-align">Table Service Restaurants</h4>
         <section>
           {this.state.restaurants.length > 1 && this.displayState()}
         </section>
