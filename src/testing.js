@@ -27,11 +27,10 @@ class Testing extends Component {
         let attMatch = arrayMerged.find(object => {
           return elm.permalink === object.permalink
         })
-        if(attMatch){
-          return elm
-        }
-        console.log(leftovers);
+          return !attMatch
       })
+      let newArray = [...arrayMerged, ...leftovers]
+      console.log(newArray);
     })
   }
 
