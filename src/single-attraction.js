@@ -37,7 +37,7 @@ class SingleAttraction extends Component{
       } else {
         this.setState({
           user: {},
-          comments: {}
+          comments: []
         })
       }
     })
@@ -51,7 +51,7 @@ class SingleAttraction extends Component{
           <img className="responsive-img" src={`${attraction.image}`} alt="#"/>
         </div>
         <div className="attractionInfo col s6 center-align">
-          <h4><u>{attraction.name}</u></h4>
+          <h4>{attraction.name}</h4>
           <p>Location: {attraction.world}</p>
           <p>{this.fastpass(attraction)}</p>
           <p>{attraction.description}</p>
@@ -89,7 +89,7 @@ class SingleAttraction extends Component{
 
   submitComment(event){
     event.preventDefault();
-    // console.log(this.state.user);
+    console.log(this.state.user);
     const comment = this.comment.value;
     const userName = this.state.user.displayName
     const userAvatar = this.state.user.photoURL
@@ -128,12 +128,12 @@ class SingleAttraction extends Component{
             <form className="row"
               onSubmit={this.submitComment.bind(this)}>
               <input
-                className="col s8 offset-s1"
+                className="commentBox col s8 offset-s1"
                 placeholder='Leave a Comment'
                 ref={element => this.comment = element}
               />
-              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i className="material-icons right">send</i>
+              <button className="submitButton btn waves-effect waves-light" type="submit" name="action">Submit
+                <i className="commentBox material-icons right">send</i>
               </button>
             </form>
           </div>
@@ -144,7 +144,7 @@ class SingleAttraction extends Component{
       return(
         <div className="row">
           <div className="col s12 center-align">
-            <div onClick={this.login.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Login to view or leave comments</div>
+            <div onClick={this.login.bind(this)} className="logButton waves-effect waves-light btn">Login to view or leave comments</div>
           </div>
         </div>
       )
@@ -161,7 +161,7 @@ class SingleAttraction extends Component{
   }
 
   render(){
-    // console.log(this.state.user);
+    console.log(this.state.user);
     return(
       <div className="singleAtttraction container">
 

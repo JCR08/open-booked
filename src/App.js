@@ -52,11 +52,13 @@ class App extends Component {
         <div className="center-align">
           <img src={`${this.state.user.photoURL}`} alt="" className="userAvatar circle"/>
           <div>Welcome, {this.state.user.displayName}</div>
-          <div onClick={this.logout.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Logout</div>
+          {/* <div onClick={this.logout.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Logout</div> */}
+          <div onClick={this.logout.bind(this)} className="logButton waves-effect waves-light btn">Logout</div>
         </div>
       )
     } else {
-      return <button onClick={this.login.bind(this)}>Login</button>
+      // return <div className="waves-effect waves-light btn #bbdefb blue lighten-4" onClick={this.login.bind(this)}>Login</div>
+      return <div className="logButton waves-effect waves-light btn" onClick={this.login.bind(this)}>Login</div>
     }
   }
 
@@ -80,9 +82,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header #90caf9 blue lighten-3">
+          <header className="App-header">
             <Link to="/">
-              <h1>Open Booked Disney</h1>
+              <h1 className="#ffffff white-text"><span className='openBooked'>Open Booked </span><span className="disney"> Disney</span></h1>
             </Link>
             <div className="login">
               {this.loginOrLogoutButton()}

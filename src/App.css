@@ -1,8 +1,39 @@
-h1 {
+span.disney {
   font-family: 'Disney';
 }
 
+span.openBooked {
+  font-family: 'Acme', sans-serif;
+}
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-family: 'Oxygen', sans-serif;
+}
+
+div {
+  font-family: 'Oxygen', sans-serif;
+}
+
 @font-face {font-family: "Disney"; src: url('https://static.tumblr.com/npggxjg/VdAlzs1dx/disney.otf');}
+
+.logButton {
+  background-color: #004460;
+  font-family: 'Raleway', sans-serif;
+}
+
+.submitButton {
+  background-color: #004460;
+  font-family: 'Raleway', sans-serif;
+}
+
+.menuButton {
+  background-color: #004460;
+  font-family: 'Raleway', sans-serif;
+}
 
 .commentCard {
   margin-top: 1%;
@@ -42,12 +73,9 @@ h1 {
     border-radius: 8px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
+  background: url(https://s-media-cache-ak0.pinimg.com/originals/81/32/6f/81326f2a25b300229bc1f7f02c0d5acd.jpg);
+  background-size: 100%;
   height: 150px;
   padding: 20px;
   margin: 1%;
@@ -65,13 +93,8 @@ h1 {
   text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .image-container{
-  height: 17rem;
+  height: 18rem;
 }
 
 section {

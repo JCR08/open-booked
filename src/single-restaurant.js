@@ -95,7 +95,7 @@ class SingleRestaurant extends Component{
           if(menu.url){
             return(
               <li className="col s6 center-align">
-                <div onClick={this.setMenuState.bind(this, menu)} className="menuButton waves-effect waves-light btn #bbdefb blue lighten-4">{menu.meal}</div>
+                <div onClick={this.setMenuState.bind(this, menu)} className="menuButton waves-effect waves-light btn">{menu.meal}</div>
               </li>
           )}
         }
@@ -182,7 +182,7 @@ class SingleRestaurant extends Component{
                 placeholder='Leave a Comment'
                 ref={element => this.comment = element}
               />
-              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+              <button className="submitButton btn waves-effect waves-light" type="submit" name="action">Submit
                 <i className="material-icons right">send</i>
               </button>
             </form>
@@ -194,7 +194,7 @@ class SingleRestaurant extends Component{
       return(
         <div className="row">
           <div className="col s12 center-align">
-            <div onClick={this.login.bind(this)} className="waves-effect waves-light btn #bbdefb blue lighten-4">Login to view or leave comments</div>
+            <div onClick={this.login.bind(this)} className="logButton waves-effect waves-light btn">Login to view or leave comments</div>
           </div>
         </div>
       )

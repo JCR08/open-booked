@@ -86,7 +86,7 @@ class NavBar extends Component {
         </ul>
 
         <nav>
-          <div className="nav-wrapper row #e3f2fd blue lighten-5">
+          <div className="navBar nav-wrapper row #e1f5fe light-blue lighten-5">
 
             <ul>
               <li className="col s3 center-align">
