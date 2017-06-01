@@ -35,6 +35,11 @@ div {
   font-family: 'Raleway', sans-serif;
 }
 
+.destroy {
+  background-color: #004460;
+  font-family: 'Raleway', sans-serif;
+}
+
 .commentCard {
   margin-top: 1%;
   height: 4rem;

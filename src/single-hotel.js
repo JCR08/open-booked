@@ -39,7 +39,7 @@ class SingleHotel extends Component{
       } else {
         this.setState({
           user: {},
-          comments: {}
+          comments: []
         })
       }
     })
@@ -50,6 +50,23 @@ class SingleHotel extends Component{
     $(".dropdown-button").dropdown( { hover: true } );
     this.newHotel(newProps)
     this.newRestaurants(newProps)
+    base.auth().onAuthStateChanged(user => {
+      if(user){
+        this.setState({
+          user: user
+        })
+        base.syncState(`/hotel/${newProps.match.params.specifichotel}/comments`, {
+          context: this,
+          state: "comments",
+          asArray: true
+        })
+      } else {
+        this.setState({
+          user: {},
+          comments: []
+        })
+      }
+    })
   }
 
   getHotel(){
@@ -206,15 +223,31 @@ class SingleHotel extends Component{
     console.log(this.state.user);
     const comment = this.comment.value;
     const userName = this.state.user.displayName
+    const userID = this.state.user.uid
     const userAvatar = this.state.user.photoURL
-    let newComment = base.push(`/world/${this.props.match.params.World}/comments`, {
-      data: {
+    const commentID = this.state.comments.length
+    let newComment = this.setState({comments: [...this.state.comments, {
         comment,
         userName,
-        userAvatar
-      }
-    })
+        userAvatar,
+        userID,
+        commentID
+      }]})
+
     this.comment.value = '';
+  }
+
+  deleteButton(comment){
+    if(this.state.user.uid === comment.userID){
+      return <button className="destroy btn waves-effect waves-light" onClick={this.deleteComment.bind(this, comment)}>X</button>
+    }
+  }
+
+  deleteComment(comment){
+    let leftovers = this.state.comments.filter(object => {
+      return comment.commentID !== object.commentID
+    })
+    this.setState({comments: leftovers})
   }
 
   displayComment(){
@@ -231,6 +264,7 @@ class SingleHotel extends Component{
                       <div className="col s12 center-align">{comment.userName}</div>
                     </div>
                     <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                    <div>{this.deleteButton(comment)}</div>
                   </div>
                 )
               })}
@@ -242,6 +276,7 @@ class SingleHotel extends Component{
               <input
                 className="col s8 offset-s1"
                 placeholder='Leave a Comment'
+                required
                 ref={element => this.comment = element}
               />
               <button className="submitButton btn waves-effect waves-light" type="submit" name="action">Submit
@@ -273,8 +308,6 @@ class SingleHotel extends Component{
   }
 
   render(){
-    console.log(this.state.quickService);
-    console.log(this.state.tableService);
     return(
       <div className="singleHotel container">
 

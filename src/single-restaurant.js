@@ -53,7 +53,7 @@ class SingleRestaurant extends Component{
       } else {
         this.setState({
           user: {},
-          comments: {}
+          comments: []
         })
       }
     })
@@ -141,18 +141,32 @@ class SingleRestaurant extends Component{
     event.preventDefault();
     console.log(this.state.user);
     const comment = this.comment.value;
-    const restaurant = this.state.restaurant.name
     const userName = this.state.user.displayName
+    const userID = this.state.user.uid
     const userAvatar = this.state.user.photoURL
-    let newComment = base.push(`/restaurant/${this.props.match.params.permalink}/comments`, {
-      data: {
+    const commentID = this.state.comments.length
+    let newComment = this.setState({comments: [...this.state.comments, {
         comment,
-        restaurant,
         userName,
-        userAvatar
-      }
-    })
+        userAvatar,
+        userID,
+        commentID
+      }]})
+
     this.comment.value = '';
+  }
+
+  deleteButton(comment){
+    if(this.state.user.uid === comment.userID){
+      return <button className="destroy btn waves-effect waves-light" onClick={this.deleteComment.bind(this, comment)}>X</button>
+    }
+  }
+
+  deleteComment(comment){
+    let leftovers = this.state.comments.filter(object => {
+      return comment.commentID !== object.commentID
+    })
+    this.setState({comments: leftovers})
   }
 
   displayComment(){
@@ -169,6 +183,7 @@ class SingleRestaurant extends Component{
                       <div className="col s12 center-align">{comment.userName}</div>
                     </div>
                     <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                    <div>{this.deleteButton(comment)}</div>
                   </div>
                 )
               })}
@@ -180,6 +195,7 @@ class SingleRestaurant extends Component{
               <input
                 className="col s8 offset-s1"
                 placeholder='Leave a Comment'
+                required
                 ref={element => this.comment = element}
               />
               <button className="submitButton btn waves-effect waves-light" type="submit" name="action">Submit

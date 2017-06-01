@@ -92,17 +92,31 @@ class SingleAttraction extends Component{
     console.log(this.state.user);
     const comment = this.comment.value;
     const userName = this.state.user.displayName
+    const userID = this.state.user.uid
     const userAvatar = this.state.user.photoURL
-    const attraction = this.state.attraction.name
-    let newComment = base.push(`/attraction/${this.props.match.params.permalink}/comments`, {
-      data: {
+    const commentID = this.state.comments.length
+    let newComment = this.setState({comments: [...this.state.comments, {
         comment,
-        attraction,
         userName,
-        userAvatar
-      }
-    })
+        userAvatar,
+        userID,
+        commentID
+      }]})
+
     this.comment.value = '';
+  }
+
+  deleteButton(comment){
+    if(this.state.user.uid === comment.userID){
+      return <button className="destroy btn waves-effect waves-light" onClick={this.deleteComment.bind(this, comment)}>X</button>
+    }
+  }
+
+  deleteComment(comment){
+    let leftovers = this.state.comments.filter(object => {
+      return comment.commentID !== object.commentID
+    })
+    this.setState({comments: leftovers})
   }
 
   displayComment(){
@@ -119,6 +133,7 @@ class SingleAttraction extends Component{
                       <div className="col s12 center-align">{comment.userName}</div>
                     </div>
                     <div className="pastComments col s6 offest-s1">{comment.comment}</div>
+                    <div>{this.deleteButton(comment)}</div>
                   </div>
                 )
               })}
@@ -128,12 +143,13 @@ class SingleAttraction extends Component{
             <form className="row"
               onSubmit={this.submitComment.bind(this)}>
               <input
-                className="commentBox col s8 offset-s1"
+                className="col s8 offset-s1"
                 placeholder='Leave a Comment'
+                required
                 ref={element => this.comment = element}
               />
               <button className="submitButton btn waves-effect waves-light" type="submit" name="action">Submit
-                <i className="commentBox material-icons right">send</i>
+                <i className="material-icons right">send</i>
               </button>
             </form>
           </div>
