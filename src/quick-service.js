@@ -58,11 +58,30 @@ class QuickService extends Component {
     )
   }
 
+  displayLoader(){
+    return(
+      <div className="center-align loader">
+      <div className="preloader-wrapper active">
+        <div className="spinner-layer spinner-blue-only">
+          <div className="circle-clipper left">
+            <div className="circle"></div>
+          </div><div className="gap-patch">
+            <div className="circle"></div>
+          </div><div className="circle-clipper right">
+            <div className="circle"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    )
+  }
+
   render(){
     return(
       <div className="quickService container">
         <h4 className="center-align">Quick Service Restaurants</h4>
         <section>
+          {this.state.restaurants.length == 1 && this.displayLoader()}
           {this.state.restaurants.length > 1 && this.displayState()}
         </section>
 
