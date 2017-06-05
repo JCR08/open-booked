@@ -96,53 +96,29 @@ class App extends Component {
           </div>
           <div className="body">
 
-            <Route exact path="/" render={(defaultProps) =>
-              <Home {...defaultProps}/> }
-            />
+            <Route exact path="/" component={Home} />
 
-            <Route exact path="/magic-kingdom" render={(defaultProps) =>
-              <MagicKingdom {...defaultProps}/> }
-            />
+            <Route exact path="/magic-kingdom" component={MagicKingdom} />
 
-            <Route exact path="/dining" render={(defaultProps) =>
-              <Dining {...defaultProps}/> }
-            />
+            <Route exact path="/dining" component={Dining} />
 
-            <Route path="/world/:World?" render={(defaultProps) =>
-              <SpecificWorld {...defaultProps}/> }
-            />
+            <Route path="/world/:World?" component={SpecificWorld} />
 
-            <Route exact path="/attractions" render={(defaultProps) =>
-              <Attractions {...defaultProps}/> }
-            />
+            <Route exact path="/attractions" component={Attractions} />
 
-            <Route exact path="/hotels" render={(defaultProps) =>
-              <Hotels {...defaultProps}/> }
-            />
+            <Route exact path="/hotels" component={Hotels} />
 
-            <Route path="/hotel/:specifichotel?" render={(defaultProps) =>
-              <SingleHotel {...defaultProps}/> }
-            />
+            <Route path="/hotel/:specifichotel?" component={SingleHotel} />
 
-            <Route path="/attraction/:permalink?" render={(defaultProps) =>
-              <SingleAttraction {...defaultProps}/> }
-            />
+            <Route path="/attraction/:permalink?" component={SingleAttraction} />
 
-            <Route exact path="/dining/quick-service" render={(defaultProps) =>
-              <QuickService {...defaultProps}/> }
-            />
+            <Route exact path="/dining/quick-service" component={QuickService} />
 
-            <Route exact path="/dining/table-service" render={(defaultProps) =>
-              <TableService {...defaultProps}/> }
-            />
+            <Route exact path="/dining/table-service" component={TableService} />
 
-            <Route path="/:locationLink?/:diningLink?/restaurant/:permalink?" render={(defaultProps) =>
-              <SingleRestaurant {...defaultProps}/> }
-            />
+            <Route path="/:locationLink?/:diningLink?/restaurant/:permalink?" component={SingleRestaurant} />
 
-            <Route path="/testing" render={(defaultProps) =>
-              <Testing {...defaultProps}/> }
-            />
+            <Route path="/testing" component={Testing} />
 
           </div>
         </div>

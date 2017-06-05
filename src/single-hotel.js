@@ -167,7 +167,7 @@ class SingleHotel extends Component{
           <img className="responsive-img" src={`${hotel.image}`} alt="#"/>
         </div>
         <div className="restaurantInfo col s6 center-align">
-          <h4><u>{hotel.name}</u></h4>
+          <h4>{hotel.name}</h4>
           <p>Phone: ({hotel.phone_number.substring(0,3)}) {hotel.phone_number.substring(3,6)}-{hotel.phone_number.substring(6,10)}</p>
           <p>Price Range: {hotel.cost_range} per night</p>
           <p>{hotel.description}</p>
