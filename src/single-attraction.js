@@ -13,7 +13,6 @@ class SingleAttraction extends Component{
       user: {},
       comments: [],
       attraction: []
-
     }
   }
 
